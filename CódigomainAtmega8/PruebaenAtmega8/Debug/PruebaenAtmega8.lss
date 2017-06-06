@@ -1,0 +1,1449 @@
+
+PruebaenAtmega8.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000876  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  000008ea  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000006  00800060  00800060  000008ea  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000008ea  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  0000091c  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000020  00000000  00000000  00000958  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000021be  00000000  00000000  00000978  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 0000059f  00000000  00000000  00002b36  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000b74  00000000  00000000  000030d5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000034  00000000  00000000  00003c4c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000349  00000000  00000000  00003c80  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00002279  00000000  00000000  00003fc9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000028  00000000  00000000  00006242  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	2c c0       	rjmp	.+88     	; 0x5a <__ctors_end>
+   2:	3b c0       	rjmp	.+118    	; 0x7a <__bad_interrupt>
+   4:	3a c0       	rjmp	.+116    	; 0x7a <__bad_interrupt>
+   6:	39 c0       	rjmp	.+114    	; 0x7a <__bad_interrupt>
+   8:	38 c0       	rjmp	.+112    	; 0x7a <__bad_interrupt>
+   a:	37 c0       	rjmp	.+110    	; 0x7a <__bad_interrupt>
+   c:	36 c0       	rjmp	.+108    	; 0x7a <__bad_interrupt>
+   e:	35 c0       	rjmp	.+106    	; 0x7a <__bad_interrupt>
+  10:	34 c0       	rjmp	.+104    	; 0x7a <__bad_interrupt>
+  12:	33 c0       	rjmp	.+102    	; 0x7a <__bad_interrupt>
+  14:	32 c0       	rjmp	.+100    	; 0x7a <__bad_interrupt>
+  16:	31 c0       	rjmp	.+98     	; 0x7a <__bad_interrupt>
+  18:	30 c0       	rjmp	.+96     	; 0x7a <__bad_interrupt>
+  1a:	2f c0       	rjmp	.+94     	; 0x7a <__bad_interrupt>
+  1c:	2e c0       	rjmp	.+92     	; 0x7a <__bad_interrupt>
+  1e:	2d c0       	rjmp	.+90     	; 0x7a <__bad_interrupt>
+  20:	2c c0       	rjmp	.+88     	; 0x7a <__bad_interrupt>
+  22:	2b c0       	rjmp	.+86     	; 0x7a <__bad_interrupt>
+  24:	2a c0       	rjmp	.+84     	; 0x7a <__bad_interrupt>
+  26:	84 c0       	rjmp	.+264    	; 0x130 <main+0xb4>
+  28:	a0 c0       	rjmp	.+320    	; 0x16a <main+0xee>
+  2a:	bd c0       	rjmp	.+378    	; 0x1a6 <main+0x12a>
+  2c:	da c0       	rjmp	.+436    	; 0x1e2 <main+0x166>
+  2e:	f6 c0       	rjmp	.+492    	; 0x21c <main+0x1a0>
+  30:	12 c1       	rjmp	.+548    	; 0x256 <main+0x1da>
+  32:	2e c1       	rjmp	.+604    	; 0x290 <main+0x214>
+  34:	52 c1       	rjmp	.+676    	; 0x2da <main+0x25e>
+  36:	6f c1       	rjmp	.+734    	; 0x316 <main+0x29a>
+  38:	8c c1       	rjmp	.+792    	; 0x352 <main+0x2d6>
+  3a:	af c1       	rjmp	.+862    	; 0x39a <main+0x31e>
+  3c:	dc c1       	rjmp	.+952    	; 0x3f6 <main+0x37a>
+  3e:	f1 c1       	rjmp	.+994    	; 0x422 <__LOCK_REGION_LENGTH__+0x22>
+  40:	1c c2       	rjmp	.+1080   	; 0x47a <__stack+0x1b>
+  42:	48 c2       	rjmp	.+1168   	; 0x4d4 <__stack+0x75>
+  44:	64 c2       	rjmp	.+1224   	; 0x50e <__stack+0xaf>
+  46:	80 c2       	rjmp	.+1280   	; 0x548 <__stack+0xe9>
+  48:	a3 c2       	rjmp	.+1350   	; 0x590 <__stack+0x131>
+  4a:	cf c2       	rjmp	.+1438   	; 0x5ea <__stack+0x18b>
+  4c:	ec c2       	rjmp	.+1496   	; 0x626 <__stack+0x1c7>
+  4e:	08 c3       	rjmp	.+1552   	; 0x660 <__stack+0x201>
+  50:	24 c3       	rjmp	.+1608   	; 0x69a <__stack+0x23b>
+  52:	4e c3       	rjmp	.+1692   	; 0x6f0 <__stack+0x291>
+  54:	78 c3       	rjmp	.+1776   	; 0x746 <__stack+0x2e7>
+  56:	a5 c3       	rjmp	.+1866   	; 0x7a2 <__stack+0x343>
+  58:	d4 c3       	rjmp	.+1960   	; 0x802 <__stack+0x3a3>
+
+0000005a <__ctors_end>:
+  5a:	11 24       	eor	r1, r1
+  5c:	1f be       	out	0x3f, r1	; 63
+  5e:	cf e5       	ldi	r28, 0x5F	; 95
+  60:	d4 e0       	ldi	r29, 0x04	; 4
+  62:	de bf       	out	0x3e, r29	; 62
+  64:	cd bf       	out	0x3d, r28	; 61
+
+00000066 <__do_clear_bss>:
+  66:	20 e0       	ldi	r18, 0x00	; 0
+  68:	a0 e6       	ldi	r26, 0x60	; 96
+  6a:	b0 e0       	ldi	r27, 0x00	; 0
+  6c:	01 c0       	rjmp	.+2      	; 0x70 <.do_clear_bss_start>
+
+0000006e <.do_clear_bss_loop>:
+  6e:	1d 92       	st	X+, r1
+
+00000070 <.do_clear_bss_start>:
+  70:	a6 36       	cpi	r26, 0x66	; 102
+  72:	b2 07       	cpc	r27, r18
+  74:	e1 f7       	brne	.-8      	; 0x6e <.do_clear_bss_loop>
+  76:	02 d0       	rcall	.+4      	; 0x7c <main>
+  78:	fc c3       	rjmp	.+2040   	; 0x872 <_exit>
+
+0000007a <__bad_interrupt>:
+  7a:	c2 cf       	rjmp	.-124    	; 0x0 <__vectors>
+
+0000007c <main>:
+#include <avr/io.h>
+#define led PORTB
+char car;
+char palabra[5];
+
+int main(void){
+  7c:	cf 93       	push	r28
+  7e:	df 93       	push	r29
+  80:	cd b7       	in	r28, 0x3d	; 61
+  82:	de b7       	in	r29, 0x3e	; 62
+  84:	29 97       	sbiw	r28, 0x09	; 9
+  86:	0f b6       	in	r0, 0x3f	; 63
+  88:	f8 94       	cli
+  8a:	de bf       	out	0x3e, r29	; 62
+  8c:	0f be       	out	0x3f, r0	; 63
+  8e:	cd bf       	out	0x3d, r28	; 61
+	DDRB=0xFF;
+  90:	8f ef       	ldi	r24, 0xFF	; 255
+  92:	87 bb       	out	0x17, r24	; 23
+	PORTB=0;
+  94:	18 ba       	out	0x18, r1	; 24
+	uint16_t (tim)=(800);
+	while (1){
+		char palabra[5];
+		palabra[0] = 'H';
+  96:	0f 2e       	mov	r0, r31
+  98:	f8 e4       	ldi	r31, 0x48	; 72
+  9a:	5f 2e       	mov	r5, r31
+  9c:	f0 2d       	mov	r31, r0
+  9e:	ae 01       	movw	r20, r28
+  a0:	4b 5f       	subi	r20, 0xFB	; 251
+  a2:	5f 4f       	sbci	r21, 0xFF	; 255
+				led=0x1F;		_delay_us(tim);
+				led=0xFF;		_delay_us(tim);
+			}
+			break;
+			case 'Z':{
+				led=0x1C;		_delay_us(tim);
+  a4:	0f 2e       	mov	r0, r31
+  a6:	fc e1       	ldi	r31, 0x1C	; 28
+  a8:	2f 2e       	mov	r2, r31
+  aa:	f0 2d       	mov	r31, r0
+				led=0x3A;		_delay_us(tim);
+				led=0x36;		_delay_us(tim);
+  ac:	0f 2e       	mov	r0, r31
+  ae:	f6 e3       	ldi	r31, 0x36	; 54
+  b0:	3f 2e       	mov	r3, r31
+  b2:	f0 2d       	mov	r31, r0
+				led=0x2E;		_delay_us(tim);
+				led=0x1C;		_delay_us(tim);
+				led=0xFF;		_delay_us(tim);
+  b4:	2f ef       	ldi	r18, 0xFF	; 255
+				led=0x03;		_delay_us(tim);
+				led=0xFF;		_delay_us(tim);
+			}
+			break;
+			case 'W':{
+				led=0x01;		_delay_us(tim);
+  b6:	44 24       	eor	r4, r4
+  b8:	43 94       	inc	r4
+				led=0x1C;		_delay_us(tim);
+				led=0x3A;		_delay_us(tim);
+				led=0x36;		_delay_us(tim);
+				led=0x2E;		_delay_us(tim);
+				led=0x1C;		_delay_us(tim);
+				led=0xFF;		_delay_us(tim);
+  ba:	72 2e       	mov	r7, r18
+	DDRB=0xFF;
+	PORTB=0;
+	uint16_t (tim)=(800);
+	while (1){
+		char palabra[5];
+		palabra[0] = 'H';
+  bc:	59 82       	std	Y+1, r5	; 0x01
+		palabra[1] = 'O';
+  be:	8f e4       	ldi	r24, 0x4F	; 79
+  c0:	8a 83       	std	Y+2, r24	; 0x02
+		palabra[2] = 'L';
+  c2:	8c e4       	ldi	r24, 0x4C	; 76
+  c4:	8b 83       	std	Y+3, r24	; 0x03
+		palabra[3] = 'A';
+  c6:	81 e4       	ldi	r24, 0x41	; 65
+  c8:	8c 83       	std	Y+4, r24	; 0x04
+		palabra[4] = 0;
+  ca:	1d 82       	std	Y+5, r1	; 0x05
+  cc:	fe 01       	movw	r30, r28
+  ce:	31 96       	adiw	r30, 0x01	; 1
+				led=0xFF;		_delay_us(tim);
+			}
+			break;
+			case 'W':{
+				led=0x01;		_delay_us(tim);
+				led=0x7E;		_delay_us(tim);
+  d0:	7e e7       	ldi	r23, 0x7E	; 126
+				led=0x01;		_delay_us(tim);
+				led=0xFF;		_delay_us(tim);
+			}
+			break;
+			case 'V':{
+				led=0x03;		_delay_us(tim);
+  d2:	0f 2e       	mov	r0, r31
+  d4:	f3 e0       	ldi	r31, 0x03	; 3
+  d6:	cf 2e       	mov	r12, r31
+  d8:	f0 2d       	mov	r31, r0
+				led=0x7D;		_delay_us(tim);
+  da:	0f 2e       	mov	r0, r31
+  dc:	fd e7       	ldi	r31, 0x7D	; 125
+  de:	ef 2e       	mov	r14, r31
+  e0:	f0 2d       	mov	r31, r0
+				led=0x59;		_delay_us(tim);
+				led=0xFF;		_delay_us(tim);
+			}
+			break;
+			case 'T':{
+				led=0x3F;		_delay_us(2*tim);
+  e2:	0f 2e       	mov	r0, r31
+  e4:	ff e3       	ldi	r31, 0x3F	; 63
+  e6:	ff 2e       	mov	r15, r31
+  e8:	f0 2d       	mov	r31, r0
+			}
+			break;
+			case 'S':{
+				led=0x4D;		_delay_us(tim);
+				led=0x36;		_delay_us(3*tim);
+				led=0x59;		_delay_us(tim);
+  ea:	0f 2e       	mov	r0, r31
+  ec:	f9 e5       	ldi	r31, 0x59	; 89
+  ee:	df 2e       	mov	r13, r31
+  f0:	f0 2d       	mov	r31, r0
+				led=0x7E;		_delay_us(tim);
+				led=0xFF;		_delay_us(tim);
+			}
+			break;
+			case 'R':{
+				led=0x40;		_delay_us(tim);
+  f2:	10 e4       	ldi	r17, 0x40	; 64
+				led=0x37;		_delay_us(tim);
+  f4:	07 e3       	ldi	r16, 0x37	; 55
+				led=0x33;		_delay_us(tim);
+  f6:	0f 2e       	mov	r0, r31
+  f8:	f3 e3       	ldi	r31, 0x33	; 51
+  fa:	6f 2e       	mov	r6, r31
+  fc:	f0 2d       	mov	r31, r0
+				led=0x4F;		_delay_us(tim);
+				led=0xFF;		_delay_us(tim);
+			}
+			break;
+			case 'Q':{
+				led=0x41;		_delay_us(tim);
+  fe:	31 e4       	ldi	r19, 0x41	; 65
+				led=0x3E;		_delay_us(2*tim);
+ 100:	6e e3       	ldi	r22, 0x3E	; 62
+			}
+			break;			
+			case 'P':{
+				led=0x40;		_delay_us(tim);
+				led=0x37;		_delay_us(3*tim);
+				led=0x4F;		_delay_us(tim);
+ 102:	9f e4       	ldi	r25, 0x4F	; 79
+ 104:	df 01       	movw	r26, r30
+		palabra[2] = 'L';
+		palabra[3] = 'A';
+		palabra[4] = 0;
+		
+		for (int i=0; i<4; i++){			
+			car=palabra[i];
+ 106:	ed 91       	ld	r30, X+
+ 108:	e0 93 60 00 	sts	0x0060, r30	; 0x800060 <_edata>
+		
+		switch(car){			
+ 10c:	8e 2e       	mov	r8, r30
+ 10e:	91 2c       	mov	r9, r1
+ 110:	a1 2c       	mov	r10, r1
+ 112:	b1 2c       	mov	r11, r1
+ 114:	8e 82       	std	Y+6, r8	; 0x06
+ 116:	9f 82       	std	Y+7, r9	; 0x07
+ 118:	a8 86       	std	Y+8, r10	; 0x08
+ 11a:	b9 86       	std	Y+9, r11	; 0x09
+ 11c:	f4 01       	movw	r30, r8
+ 11e:	e1 54       	subi	r30, 0x41	; 65
+ 120:	f1 09       	sbc	r31, r1
+ 122:	ea 31       	cpi	r30, 0x1A	; 26
+ 124:	f1 05       	cpc	r31, r1
+ 126:	08 f0       	brcs	.+2      	; 0x12a <main+0xae>
+ 128:	98 c3       	rjmp	.+1840   	; 0x85a <__stack+0x3fb>
+ 12a:	ed 5e       	subi	r30, 0xED	; 237
+ 12c:	ff 4f       	sbci	r31, 0xFF	; 255
+ 12e:	09 94       	ijmp
+			case 'A': {				
+				led=0x40;		_delay_us(tim);
+ 130:	18 bb       	out	0x18, r17	; 24
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 132:	ef e3       	ldi	r30, 0x3F	; 63
+ 134:	f6 e0       	ldi	r31, 0x06	; 6
+ 136:	31 97       	sbiw	r30, 0x01	; 1
+ 138:	f1 f7       	brne	.-4      	; 0x136 <main+0xba>
+ 13a:	00 c0       	rjmp	.+0      	; 0x13c <main+0xc0>
+ 13c:	00 00       	nop
+				led=0x37;		_delay_us(3*tim);
+ 13e:	08 bb       	out	0x18, r16	; 24
+ 140:	ef eb       	ldi	r30, 0xBF	; 191
+ 142:	f2 e1       	ldi	r31, 0x12	; 18
+ 144:	31 97       	sbiw	r30, 0x01	; 1
+ 146:	f1 f7       	brne	.-4      	; 0x144 <main+0xc8>
+ 148:	00 c0       	rjmp	.+0      	; 0x14a <main+0xce>
+ 14a:	00 00       	nop
+				led=0x40;		_delay_us(tim);
+ 14c:	18 bb       	out	0x18, r17	; 24
+ 14e:	ef e3       	ldi	r30, 0x3F	; 63
+ 150:	f6 e0       	ldi	r31, 0x06	; 6
+ 152:	31 97       	sbiw	r30, 0x01	; 1
+ 154:	f1 f7       	brne	.-4      	; 0x152 <main+0xd6>
+ 156:	00 c0       	rjmp	.+0      	; 0x158 <main+0xdc>
+ 158:	00 00       	nop
+				led=0xFF;		_delay_us(tim);				
+ 15a:	28 bb       	out	0x18, r18	; 24
+ 15c:	ef e3       	ldi	r30, 0x3F	; 63
+ 15e:	f6 e0       	ldi	r31, 0x06	; 6
+ 160:	31 97       	sbiw	r30, 0x01	; 1
+ 162:	f1 f7       	brne	.-4      	; 0x160 <main+0xe4>
+ 164:	00 c0       	rjmp	.+0      	; 0x166 <main+0xea>
+ 166:	00 00       	nop
+ 168:	78 c3       	rjmp	.+1776   	; 0x85a <__stack+0x3fb>
+			}			
+			break;
+			case 'B':{
+				led=0x00;		_delay_us(tim);
+ 16a:	18 ba       	out	0x18, r1	; 24
+ 16c:	ef e3       	ldi	r30, 0x3F	; 63
+ 16e:	f6 e0       	ldi	r31, 0x06	; 6
+ 170:	31 97       	sbiw	r30, 0x01	; 1
+ 172:	f1 f7       	brne	.-4      	; 0x170 <main+0xf4>
+ 174:	00 c0       	rjmp	.+0      	; 0x176 <main+0xfa>
+ 176:	00 00       	nop
+				led=0x36;		_delay_us(3*tim);
+ 178:	38 ba       	out	0x18, r3	; 24
+ 17a:	ef eb       	ldi	r30, 0xBF	; 191
+ 17c:	f2 e1       	ldi	r31, 0x12	; 18
+ 17e:	31 97       	sbiw	r30, 0x01	; 1
+ 180:	f1 f7       	brne	.-4      	; 0x17e <main+0x102>
+ 182:	00 c0       	rjmp	.+0      	; 0x184 <main+0x108>
+ 184:	00 00       	nop
+				led=0x49;		_delay_us(tim);
+ 186:	89 e4       	ldi	r24, 0x49	; 73
+ 188:	88 bb       	out	0x18, r24	; 24
+ 18a:	ef e3       	ldi	r30, 0x3F	; 63
+ 18c:	f6 e0       	ldi	r31, 0x06	; 6
+ 18e:	31 97       	sbiw	r30, 0x01	; 1
+ 190:	f1 f7       	brne	.-4      	; 0x18e <main+0x112>
+ 192:	00 c0       	rjmp	.+0      	; 0x194 <main+0x118>
+ 194:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 196:	28 bb       	out	0x18, r18	; 24
+ 198:	ef e3       	ldi	r30, 0x3F	; 63
+ 19a:	f6 e0       	ldi	r31, 0x06	; 6
+ 19c:	31 97       	sbiw	r30, 0x01	; 1
+ 19e:	f1 f7       	brne	.-4      	; 0x19c <main+0x120>
+ 1a0:	00 c0       	rjmp	.+0      	; 0x1a2 <main+0x126>
+ 1a2:	00 00       	nop
+ 1a4:	5a c3       	rjmp	.+1716   	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'C':{
+				led=0x41;		_delay_us(tim);
+ 1a6:	38 bb       	out	0x18, r19	; 24
+ 1a8:	ef e3       	ldi	r30, 0x3F	; 63
+ 1aa:	f6 e0       	ldi	r31, 0x06	; 6
+ 1ac:	31 97       	sbiw	r30, 0x01	; 1
+ 1ae:	f1 f7       	brne	.-4      	; 0x1ac <main+0x130>
+ 1b0:	00 c0       	rjmp	.+0      	; 0x1b2 <main+0x136>
+ 1b2:	00 00       	nop
+				led=0x3E;		_delay_us(3*tim);
+ 1b4:	68 bb       	out	0x18, r22	; 24
+ 1b6:	ef eb       	ldi	r30, 0xBF	; 191
+ 1b8:	f2 e1       	ldi	r31, 0x12	; 18
+ 1ba:	31 97       	sbiw	r30, 0x01	; 1
+ 1bc:	f1 f7       	brne	.-4      	; 0x1ba <main+0x13e>
+ 1be:	00 c0       	rjmp	.+0      	; 0x1c0 <main+0x144>
+ 1c0:	00 00       	nop
+				led=0x5D;		_delay_us(tim);
+ 1c2:	8d e5       	ldi	r24, 0x5D	; 93
+ 1c4:	88 bb       	out	0x18, r24	; 24
+ 1c6:	ef e3       	ldi	r30, 0x3F	; 63
+ 1c8:	f6 e0       	ldi	r31, 0x06	; 6
+ 1ca:	31 97       	sbiw	r30, 0x01	; 1
+ 1cc:	f1 f7       	brne	.-4      	; 0x1ca <main+0x14e>
+ 1ce:	00 c0       	rjmp	.+0      	; 0x1d0 <main+0x154>
+ 1d0:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 1d2:	28 bb       	out	0x18, r18	; 24
+ 1d4:	ef e3       	ldi	r30, 0x3F	; 63
+ 1d6:	f6 e0       	ldi	r31, 0x06	; 6
+ 1d8:	31 97       	sbiw	r30, 0x01	; 1
+ 1da:	f1 f7       	brne	.-4      	; 0x1d8 <main+0x15c>
+ 1dc:	00 c0       	rjmp	.+0      	; 0x1de <main+0x162>
+ 1de:	00 00       	nop
+ 1e0:	3c c3       	rjmp	.+1656   	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'D':{
+				led=0x00;		_delay_us(tim);
+ 1e2:	18 ba       	out	0x18, r1	; 24
+ 1e4:	ef e3       	ldi	r30, 0x3F	; 63
+ 1e6:	f6 e0       	ldi	r31, 0x06	; 6
+ 1e8:	31 97       	sbiw	r30, 0x01	; 1
+ 1ea:	f1 f7       	brne	.-4      	; 0x1e8 <main+0x16c>
+ 1ec:	00 c0       	rjmp	.+0      	; 0x1ee <main+0x172>
+ 1ee:	00 00       	nop
+				led=0x3E;		_delay_us(3*tim);
+ 1f0:	68 bb       	out	0x18, r22	; 24
+ 1f2:	ef eb       	ldi	r30, 0xBF	; 191
+ 1f4:	f2 e1       	ldi	r31, 0x12	; 18
+ 1f6:	31 97       	sbiw	r30, 0x01	; 1
+ 1f8:	f1 f7       	brne	.-4      	; 0x1f6 <main+0x17a>
+ 1fa:	00 c0       	rjmp	.+0      	; 0x1fc <main+0x180>
+ 1fc:	00 00       	nop
+				led=0x41;		_delay_us(tim);
+ 1fe:	38 bb       	out	0x18, r19	; 24
+ 200:	ef e3       	ldi	r30, 0x3F	; 63
+ 202:	f6 e0       	ldi	r31, 0x06	; 6
+ 204:	31 97       	sbiw	r30, 0x01	; 1
+ 206:	f1 f7       	brne	.-4      	; 0x204 <main+0x188>
+ 208:	00 c0       	rjmp	.+0      	; 0x20a <main+0x18e>
+ 20a:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 20c:	28 bb       	out	0x18, r18	; 24
+ 20e:	ef e3       	ldi	r30, 0x3F	; 63
+ 210:	f6 e0       	ldi	r31, 0x06	; 6
+ 212:	31 97       	sbiw	r30, 0x01	; 1
+ 214:	f1 f7       	brne	.-4      	; 0x212 <main+0x196>
+ 216:	00 c0       	rjmp	.+0      	; 0x218 <main+0x19c>
+ 218:	00 00       	nop
+ 21a:	1f c3       	rjmp	.+1598   	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'E':{
+				led=0x00;		_delay_us(tim);
+ 21c:	18 ba       	out	0x18, r1	; 24
+ 21e:	ef e3       	ldi	r30, 0x3F	; 63
+ 220:	f6 e0       	ldi	r31, 0x06	; 6
+ 222:	31 97       	sbiw	r30, 0x01	; 1
+ 224:	f1 f7       	brne	.-4      	; 0x222 <main+0x1a6>
+ 226:	00 c0       	rjmp	.+0      	; 0x228 <main+0x1ac>
+ 228:	00 00       	nop
+				led=0x36;		_delay_us(3*tim);
+ 22a:	38 ba       	out	0x18, r3	; 24
+ 22c:	ef eb       	ldi	r30, 0xBF	; 191
+ 22e:	f2 e1       	ldi	r31, 0x12	; 18
+ 230:	31 97       	sbiw	r30, 0x01	; 1
+ 232:	f1 f7       	brne	.-4      	; 0x230 <main+0x1b4>
+ 234:	00 c0       	rjmp	.+0      	; 0x236 <main+0x1ba>
+ 236:	00 00       	nop
+				led=0x3E;		_delay_us(tim);
+ 238:	68 bb       	out	0x18, r22	; 24
+ 23a:	ef e3       	ldi	r30, 0x3F	; 63
+ 23c:	f6 e0       	ldi	r31, 0x06	; 6
+ 23e:	31 97       	sbiw	r30, 0x01	; 1
+ 240:	f1 f7       	brne	.-4      	; 0x23e <main+0x1c2>
+ 242:	00 c0       	rjmp	.+0      	; 0x244 <main+0x1c8>
+ 244:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 246:	28 bb       	out	0x18, r18	; 24
+ 248:	ef e3       	ldi	r30, 0x3F	; 63
+ 24a:	f6 e0       	ldi	r31, 0x06	; 6
+ 24c:	31 97       	sbiw	r30, 0x01	; 1
+ 24e:	f1 f7       	brne	.-4      	; 0x24c <main+0x1d0>
+ 250:	00 c0       	rjmp	.+0      	; 0x252 <main+0x1d6>
+ 252:	00 00       	nop
+ 254:	02 c3       	rjmp	.+1540   	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'F':{
+				led=0x00;		_delay_us(tim);
+ 256:	18 ba       	out	0x18, r1	; 24
+ 258:	ef e3       	ldi	r30, 0x3F	; 63
+ 25a:	f6 e0       	ldi	r31, 0x06	; 6
+ 25c:	31 97       	sbiw	r30, 0x01	; 1
+ 25e:	f1 f7       	brne	.-4      	; 0x25c <main+0x1e0>
+ 260:	00 c0       	rjmp	.+0      	; 0x262 <main+0x1e6>
+ 262:	00 00       	nop
+				led=0x37;		_delay_us(3*tim);
+ 264:	08 bb       	out	0x18, r16	; 24
+ 266:	ef eb       	ldi	r30, 0xBF	; 191
+ 268:	f2 e1       	ldi	r31, 0x12	; 18
+ 26a:	31 97       	sbiw	r30, 0x01	; 1
+ 26c:	f1 f7       	brne	.-4      	; 0x26a <main+0x1ee>
+ 26e:	00 c0       	rjmp	.+0      	; 0x270 <main+0x1f4>
+ 270:	00 00       	nop
+				led=0x3F;		_delay_us(tim);
+ 272:	f8 ba       	out	0x18, r15	; 24
+ 274:	ef e3       	ldi	r30, 0x3F	; 63
+ 276:	f6 e0       	ldi	r31, 0x06	; 6
+ 278:	31 97       	sbiw	r30, 0x01	; 1
+ 27a:	f1 f7       	brne	.-4      	; 0x278 <main+0x1fc>
+ 27c:	00 c0       	rjmp	.+0      	; 0x27e <main+0x202>
+ 27e:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 280:	28 bb       	out	0x18, r18	; 24
+ 282:	ef e3       	ldi	r30, 0x3F	; 63
+ 284:	f6 e0       	ldi	r31, 0x06	; 6
+ 286:	31 97       	sbiw	r30, 0x01	; 1
+ 288:	f1 f7       	brne	.-4      	; 0x286 <main+0x20a>
+ 28a:	00 c0       	rjmp	.+0      	; 0x28c <main+0x210>
+ 28c:	00 00       	nop
+ 28e:	e5 c2       	rjmp	.+1482   	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'G':{
+				led=0x41;		_delay_us(tim);
+ 290:	38 bb       	out	0x18, r19	; 24
+ 292:	ef e3       	ldi	r30, 0x3F	; 63
+ 294:	f6 e0       	ldi	r31, 0x06	; 6
+ 296:	31 97       	sbiw	r30, 0x01	; 1
+ 298:	f1 f7       	brne	.-4      	; 0x296 <main+0x21a>
+ 29a:	00 c0       	rjmp	.+0      	; 0x29c <main+0x220>
+ 29c:	00 00       	nop
+				led=0x36;		_delay_us(tim);
+ 29e:	38 ba       	out	0x18, r3	; 24
+ 2a0:	ef e3       	ldi	r30, 0x3F	; 63
+ 2a2:	f6 e0       	ldi	r31, 0x06	; 6
+ 2a4:	31 97       	sbiw	r30, 0x01	; 1
+ 2a6:	f1 f7       	brne	.-4      	; 0x2a4 <main+0x228>
+ 2a8:	00 c0       	rjmp	.+0      	; 0x2aa <main+0x22e>
+ 2aa:	00 00       	nop
+				led=0x32;		_delay_us(2*tim);
+ 2ac:	82 e3       	ldi	r24, 0x32	; 50
+ 2ae:	88 bb       	out	0x18, r24	; 24
+ 2b0:	ef e7       	ldi	r30, 0x7F	; 127
+ 2b2:	fc e0       	ldi	r31, 0x0C	; 12
+ 2b4:	31 97       	sbiw	r30, 0x01	; 1
+ 2b6:	f1 f7       	brne	.-4      	; 0x2b4 <main+0x238>
+ 2b8:	00 c0       	rjmp	.+0      	; 0x2ba <main+0x23e>
+ 2ba:	00 00       	nop
+				led=0x59;		_delay_us(tim);
+ 2bc:	d8 ba       	out	0x18, r13	; 24
+ 2be:	ef e3       	ldi	r30, 0x3F	; 63
+ 2c0:	f6 e0       	ldi	r31, 0x06	; 6
+ 2c2:	31 97       	sbiw	r30, 0x01	; 1
+ 2c4:	f1 f7       	brne	.-4      	; 0x2c2 <main+0x246>
+ 2c6:	00 c0       	rjmp	.+0      	; 0x2c8 <main+0x24c>
+ 2c8:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 2ca:	28 bb       	out	0x18, r18	; 24
+ 2cc:	ef e3       	ldi	r30, 0x3F	; 63
+ 2ce:	f6 e0       	ldi	r31, 0x06	; 6
+ 2d0:	31 97       	sbiw	r30, 0x01	; 1
+ 2d2:	f1 f7       	brne	.-4      	; 0x2d0 <main+0x254>
+ 2d4:	00 c0       	rjmp	.+0      	; 0x2d6 <main+0x25a>
+ 2d6:	00 00       	nop
+ 2d8:	c0 c2       	rjmp	.+1408   	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'H':{
+				led=0x00;		_delay_us(tim);
+ 2da:	18 ba       	out	0x18, r1	; 24
+ 2dc:	ef e3       	ldi	r30, 0x3F	; 63
+ 2de:	f6 e0       	ldi	r31, 0x06	; 6
+ 2e0:	31 97       	sbiw	r30, 0x01	; 1
+ 2e2:	f1 f7       	brne	.-4      	; 0x2e0 <main+0x264>
+ 2e4:	00 c0       	rjmp	.+0      	; 0x2e6 <main+0x26a>
+ 2e6:	00 00       	nop
+				led=0x77;		_delay_us(3*tim);
+ 2e8:	f7 e7       	ldi	r31, 0x77	; 119
+ 2ea:	f8 bb       	out	0x18, r31	; 24
+ 2ec:	ef eb       	ldi	r30, 0xBF	; 191
+ 2ee:	f2 e1       	ldi	r31, 0x12	; 18
+ 2f0:	31 97       	sbiw	r30, 0x01	; 1
+ 2f2:	f1 f7       	brne	.-4      	; 0x2f0 <main+0x274>
+ 2f4:	00 c0       	rjmp	.+0      	; 0x2f6 <main+0x27a>
+ 2f6:	00 00       	nop
+				led=0x00;		_delay_us(tim);
+ 2f8:	18 ba       	out	0x18, r1	; 24
+ 2fa:	ef e3       	ldi	r30, 0x3F	; 63
+ 2fc:	f6 e0       	ldi	r31, 0x06	; 6
+ 2fe:	31 97       	sbiw	r30, 0x01	; 1
+ 300:	f1 f7       	brne	.-4      	; 0x2fe <main+0x282>
+ 302:	00 c0       	rjmp	.+0      	; 0x304 <main+0x288>
+ 304:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 306:	28 bb       	out	0x18, r18	; 24
+ 308:	ef e3       	ldi	r30, 0x3F	; 63
+ 30a:	f6 e0       	ldi	r31, 0x06	; 6
+ 30c:	31 97       	sbiw	r30, 0x01	; 1
+ 30e:	f1 f7       	brne	.-4      	; 0x30c <main+0x290>
+ 310:	00 c0       	rjmp	.+0      	; 0x312 <main+0x296>
+ 312:	00 00       	nop
+ 314:	a2 c2       	rjmp	.+1348   	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'I':{
+				led=0x00;		_delay_us(tim);
+ 316:	18 ba       	out	0x18, r1	; 24
+ 318:	ef e3       	ldi	r30, 0x3F	; 63
+ 31a:	f6 e0       	ldi	r31, 0x06	; 6
+ 31c:	31 97       	sbiw	r30, 0x01	; 1
+ 31e:	f1 f7       	brne	.-4      	; 0x31c <main+0x2a0>
+ 320:	00 c0       	rjmp	.+0      	; 0x322 <main+0x2a6>
+ 322:	00 00       	nop
+				led=0x77;		_delay_us(3*tim);
+ 324:	f7 e7       	ldi	r31, 0x77	; 119
+ 326:	f8 bb       	out	0x18, r31	; 24
+ 328:	ef eb       	ldi	r30, 0xBF	; 191
+ 32a:	f2 e1       	ldi	r31, 0x12	; 18
+ 32c:	31 97       	sbiw	r30, 0x01	; 1
+ 32e:	f1 f7       	brne	.-4      	; 0x32c <main+0x2b0>
+ 330:	00 c0       	rjmp	.+0      	; 0x332 <main+0x2b6>
+ 332:	00 00       	nop
+				led=0x00;		_delay_us(tim);
+ 334:	18 ba       	out	0x18, r1	; 24
+ 336:	ef e3       	ldi	r30, 0x3F	; 63
+ 338:	f6 e0       	ldi	r31, 0x06	; 6
+ 33a:	31 97       	sbiw	r30, 0x01	; 1
+ 33c:	f1 f7       	brne	.-4      	; 0x33a <main+0x2be>
+ 33e:	00 c0       	rjmp	.+0      	; 0x340 <main+0x2c4>
+ 340:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 342:	28 bb       	out	0x18, r18	; 24
+ 344:	ef e3       	ldi	r30, 0x3F	; 63
+ 346:	f6 e0       	ldi	r31, 0x06	; 6
+ 348:	31 97       	sbiw	r30, 0x01	; 1
+ 34a:	f1 f7       	brne	.-4      	; 0x348 <main+0x2cc>
+ 34c:	00 c0       	rjmp	.+0      	; 0x34e <main+0x2d2>
+ 34e:	00 00       	nop
+ 350:	84 c2       	rjmp	.+1288   	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'J':{
+				led=0x7D;		_delay_us(tim);
+ 352:	e8 ba       	out	0x18, r14	; 24
+ 354:	ef e3       	ldi	r30, 0x3F	; 63
+ 356:	f6 e0       	ldi	r31, 0x06	; 6
+ 358:	31 97       	sbiw	r30, 0x01	; 1
+ 35a:	f1 f7       	brne	.-4      	; 0x358 <main+0x2dc>
+ 35c:	00 c0       	rjmp	.+0      	; 0x35e <main+0x2e2>
+ 35e:	00 00       	nop
+				led=0x3E;		_delay_us(2*tim);				
+ 360:	68 bb       	out	0x18, r22	; 24
+ 362:	ef e7       	ldi	r30, 0x7F	; 127
+ 364:	fc e0       	ldi	r31, 0x0C	; 12
+ 366:	31 97       	sbiw	r30, 0x01	; 1
+ 368:	f1 f7       	brne	.-4      	; 0x366 <main+0x2ea>
+ 36a:	00 c0       	rjmp	.+0      	; 0x36c <main+0x2f0>
+ 36c:	00 00       	nop
+				led=0x01;		_delay_us(tim);
+ 36e:	48 ba       	out	0x18, r4	; 24
+ 370:	ef e3       	ldi	r30, 0x3F	; 63
+ 372:	f6 e0       	ldi	r31, 0x06	; 6
+ 374:	31 97       	sbiw	r30, 0x01	; 1
+ 376:	f1 f7       	brne	.-4      	; 0x374 <main+0x2f8>
+ 378:	00 c0       	rjmp	.+0      	; 0x37a <main+0x2fe>
+ 37a:	00 00       	nop
+				led=0x3F;		_delay_us(tim);
+ 37c:	f8 ba       	out	0x18, r15	; 24
+ 37e:	ef e3       	ldi	r30, 0x3F	; 63
+ 380:	f6 e0       	ldi	r31, 0x06	; 6
+ 382:	31 97       	sbiw	r30, 0x01	; 1
+ 384:	f1 f7       	brne	.-4      	; 0x382 <main+0x306>
+ 386:	00 c0       	rjmp	.+0      	; 0x388 <main+0x30c>
+ 388:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 38a:	28 bb       	out	0x18, r18	; 24
+ 38c:	ef e3       	ldi	r30, 0x3F	; 63
+ 38e:	f6 e0       	ldi	r31, 0x06	; 6
+ 390:	31 97       	sbiw	r30, 0x01	; 1
+ 392:	f1 f7       	brne	.-4      	; 0x390 <main+0x314>
+ 394:	00 c0       	rjmp	.+0      	; 0x396 <main+0x31a>
+ 396:	00 00       	nop
+ 398:	60 c2       	rjmp	.+1216   	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'K':{
+				led=0x00;		_delay_us(tim);
+ 39a:	18 ba       	out	0x18, r1	; 24
+ 39c:	ef e3       	ldi	r30, 0x3F	; 63
+ 39e:	f6 e0       	ldi	r31, 0x06	; 6
+ 3a0:	31 97       	sbiw	r30, 0x01	; 1
+ 3a2:	f1 f7       	brne	.-4      	; 0x3a0 <main+0x324>
+ 3a4:	00 c0       	rjmp	.+0      	; 0x3a6 <main+0x32a>
+ 3a6:	00 00       	nop
+				led=0x77;		_delay_us(tim);				
+ 3a8:	f7 e7       	ldi	r31, 0x77	; 119
+ 3aa:	f8 bb       	out	0x18, r31	; 24
+ 3ac:	ef e3       	ldi	r30, 0x3F	; 63
+ 3ae:	f6 e0       	ldi	r31, 0x06	; 6
+ 3b0:	31 97       	sbiw	r30, 0x01	; 1
+ 3b2:	f1 f7       	brne	.-4      	; 0x3b0 <main+0x334>
+ 3b4:	00 c0       	rjmp	.+0      	; 0x3b6 <main+0x33a>
+ 3b6:	00 00       	nop
+				led=0x6B;		_delay_us(tim);
+ 3b8:	fb e6       	ldi	r31, 0x6B	; 107
+ 3ba:	f8 bb       	out	0x18, r31	; 24
+ 3bc:	ef e3       	ldi	r30, 0x3F	; 63
+ 3be:	f6 e0       	ldi	r31, 0x06	; 6
+ 3c0:	31 97       	sbiw	r30, 0x01	; 1
+ 3c2:	f1 f7       	brne	.-4      	; 0x3c0 <main+0x344>
+ 3c4:	00 c0       	rjmp	.+0      	; 0x3c6 <main+0x34a>
+ 3c6:	00 00       	nop
+				led=0x5D;		_delay_us(tim);
+ 3c8:	8d e5       	ldi	r24, 0x5D	; 93
+ 3ca:	88 bb       	out	0x18, r24	; 24
+ 3cc:	ef e3       	ldi	r30, 0x3F	; 63
+ 3ce:	f6 e0       	ldi	r31, 0x06	; 6
+ 3d0:	31 97       	sbiw	r30, 0x01	; 1
+ 3d2:	f1 f7       	brne	.-4      	; 0x3d0 <main+0x354>
+ 3d4:	00 c0       	rjmp	.+0      	; 0x3d6 <main+0x35a>
+ 3d6:	00 00       	nop
+				led=0x3E;		_delay_us(tim);
+ 3d8:	68 bb       	out	0x18, r22	; 24
+ 3da:	ef e3       	ldi	r30, 0x3F	; 63
+ 3dc:	f6 e0       	ldi	r31, 0x06	; 6
+ 3de:	31 97       	sbiw	r30, 0x01	; 1
+ 3e0:	f1 f7       	brne	.-4      	; 0x3de <main+0x362>
+ 3e2:	00 c0       	rjmp	.+0      	; 0x3e4 <main+0x368>
+ 3e4:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 3e6:	28 bb       	out	0x18, r18	; 24
+ 3e8:	ef e3       	ldi	r30, 0x3F	; 63
+ 3ea:	f6 e0       	ldi	r31, 0x06	; 6
+ 3ec:	31 97       	sbiw	r30, 0x01	; 1
+ 3ee:	f1 f7       	brne	.-4      	; 0x3ec <main+0x370>
+ 3f0:	00 c0       	rjmp	.+0      	; 0x3f2 <main+0x376>
+ 3f2:	00 00       	nop
+ 3f4:	32 c2       	rjmp	.+1124   	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'L':{
+				led=0x00;		_delay_us(tim);
+ 3f6:	18 ba       	out	0x18, r1	; 24
+ 3f8:	ef e3       	ldi	r30, 0x3F	; 63
+ 3fa:	f6 e0       	ldi	r31, 0x06	; 6
+ 3fc:	31 97       	sbiw	r30, 0x01	; 1
+ 3fe:	f1 f7       	brne	.-4      	; 0x3fc <main+0x380>
+ 400:	00 c0       	rjmp	.+0      	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
+ 402:	00 00       	nop
+				led=0x7E;		_delay_us(4*tim);
+ 404:	78 bb       	out	0x18, r23	; 24
+ 406:	ef ef       	ldi	r30, 0xFF	; 255
+ 408:	f8 e1       	ldi	r31, 0x18	; 24
+ 40a:	31 97       	sbiw	r30, 0x01	; 1
+ 40c:	f1 f7       	brne	.-4      	; 0x40a <__LOCK_REGION_LENGTH__+0xa>
+ 40e:	00 c0       	rjmp	.+0      	; 0x410 <__LOCK_REGION_LENGTH__+0x10>
+ 410:	00 00       	nop
+				led=0xFF;		_delay_us(tim);				
+ 412:	28 bb       	out	0x18, r18	; 24
+ 414:	ef e3       	ldi	r30, 0x3F	; 63
+ 416:	f6 e0       	ldi	r31, 0x06	; 6
+ 418:	31 97       	sbiw	r30, 0x01	; 1
+ 41a:	f1 f7       	brne	.-4      	; 0x418 <__LOCK_REGION_LENGTH__+0x18>
+ 41c:	00 c0       	rjmp	.+0      	; 0x41e <__LOCK_REGION_LENGTH__+0x1e>
+ 41e:	00 00       	nop
+ 420:	1c c2       	rjmp	.+1080   	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'M':{
+				led=0x00;		_delay_us(tim);
+ 422:	18 ba       	out	0x18, r1	; 24
+ 424:	ef e3       	ldi	r30, 0x3F	; 63
+ 426:	f6 e0       	ldi	r31, 0x06	; 6
+ 428:	31 97       	sbiw	r30, 0x01	; 1
+ 42a:	f1 f7       	brne	.-4      	; 0x428 <__LOCK_REGION_LENGTH__+0x28>
+ 42c:	00 c0       	rjmp	.+0      	; 0x42e <__LOCK_REGION_LENGTH__+0x2e>
+ 42e:	00 00       	nop
+				led=0x1F;		_delay_us(tim);
+ 430:	ff e1       	ldi	r31, 0x1F	; 31
+ 432:	f8 bb       	out	0x18, r31	; 24
+ 434:	ef e3       	ldi	r30, 0x3F	; 63
+ 436:	f6 e0       	ldi	r31, 0x06	; 6
+ 438:	31 97       	sbiw	r30, 0x01	; 1
+ 43a:	f1 f7       	brne	.-4      	; 0x438 <__LOCK_REGION_LENGTH__+0x38>
+ 43c:	00 c0       	rjmp	.+0      	; 0x43e <__LOCK_REGION_LENGTH__+0x3e>
+ 43e:	00 00       	nop
+				led=0x40;		_delay_us(tim);
+ 440:	18 bb       	out	0x18, r17	; 24
+ 442:	ef e3       	ldi	r30, 0x3F	; 63
+ 444:	f6 e0       	ldi	r31, 0x06	; 6
+ 446:	31 97       	sbiw	r30, 0x01	; 1
+ 448:	f1 f7       	brne	.-4      	; 0x446 <__LOCK_REGION_LENGTH__+0x46>
+ 44a:	00 c0       	rjmp	.+0      	; 0x44c <__LOCK_REGION_LENGTH__+0x4c>
+ 44c:	00 00       	nop
+				led=0x1F;		_delay_us(tim);
+ 44e:	ff e1       	ldi	r31, 0x1F	; 31
+ 450:	f8 bb       	out	0x18, r31	; 24
+ 452:	ef e3       	ldi	r30, 0x3F	; 63
+ 454:	f6 e0       	ldi	r31, 0x06	; 6
+ 456:	31 97       	sbiw	r30, 0x01	; 1
+ 458:	f1 f7       	brne	.-4      	; 0x456 <__LOCK_REGION_LENGTH__+0x56>
+ 45a:	00 c0       	rjmp	.+0      	; 0x45c <__LOCK_REGION_LENGTH__+0x5c>
+ 45c:	00 00       	nop
+				led=0x00;		_delay_us(tim);
+ 45e:	18 ba       	out	0x18, r1	; 24
+ 460:	ef e3       	ldi	r30, 0x3F	; 63
+ 462:	f6 e0       	ldi	r31, 0x06	; 6
+ 464:	31 97       	sbiw	r30, 0x01	; 1
+ 466:	f1 f7       	brne	.-4      	; 0x464 <__stack+0x5>
+ 468:	00 c0       	rjmp	.+0      	; 0x46a <__stack+0xb>
+ 46a:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 46c:	28 bb       	out	0x18, r18	; 24
+ 46e:	ef e3       	ldi	r30, 0x3F	; 63
+ 470:	f6 e0       	ldi	r31, 0x06	; 6
+ 472:	31 97       	sbiw	r30, 0x01	; 1
+ 474:	f1 f7       	brne	.-4      	; 0x472 <__stack+0x13>
+ 476:	00 c0       	rjmp	.+0      	; 0x478 <__stack+0x19>
+ 478:	00 00       	nop
+			}
+			case 'N':{
+				led=0x00;		_delay_us(tim);
+ 47a:	18 ba       	out	0x18, r1	; 24
+ 47c:	ef e3       	ldi	r30, 0x3F	; 63
+ 47e:	f6 e0       	ldi	r31, 0x06	; 6
+ 480:	31 97       	sbiw	r30, 0x01	; 1
+ 482:	f1 f7       	brne	.-4      	; 0x480 <__stack+0x21>
+ 484:	00 c0       	rjmp	.+0      	; 0x486 <__stack+0x27>
+ 486:	00 00       	nop
+				led=0x47;		_delay_us(tim);
+ 488:	87 e4       	ldi	r24, 0x47	; 71
+ 48a:	88 bb       	out	0x18, r24	; 24
+ 48c:	ef e3       	ldi	r30, 0x3F	; 63
+ 48e:	f6 e0       	ldi	r31, 0x06	; 6
+ 490:	31 97       	sbiw	r30, 0x01	; 1
+ 492:	f1 f7       	brne	.-4      	; 0x490 <__stack+0x31>
+ 494:	00 c0       	rjmp	.+0      	; 0x496 <__stack+0x37>
+ 496:	00 00       	nop
+				led=0x73;		_delay_us(tim);
+ 498:	83 e7       	ldi	r24, 0x73	; 115
+ 49a:	88 bb       	out	0x18, r24	; 24
+ 49c:	ef e3       	ldi	r30, 0x3F	; 63
+ 49e:	f6 e0       	ldi	r31, 0x06	; 6
+ 4a0:	31 97       	sbiw	r30, 0x01	; 1
+ 4a2:	f1 f7       	brne	.-4      	; 0x4a0 <__stack+0x41>
+ 4a4:	00 c0       	rjmp	.+0      	; 0x4a6 <__stack+0x47>
+ 4a6:	00 00       	nop
+				led=0x79;		_delay_us(tim);
+ 4a8:	89 e7       	ldi	r24, 0x79	; 121
+ 4aa:	88 bb       	out	0x18, r24	; 24
+ 4ac:	ef e3       	ldi	r30, 0x3F	; 63
+ 4ae:	f6 e0       	ldi	r31, 0x06	; 6
+ 4b0:	31 97       	sbiw	r30, 0x01	; 1
+ 4b2:	f1 f7       	brne	.-4      	; 0x4b0 <__stack+0x51>
+ 4b4:	00 c0       	rjmp	.+0      	; 0x4b6 <__stack+0x57>
+ 4b6:	00 00       	nop
+				led=0x00;		_delay_us(tim);
+ 4b8:	18 ba       	out	0x18, r1	; 24
+ 4ba:	ef e3       	ldi	r30, 0x3F	; 63
+ 4bc:	f6 e0       	ldi	r31, 0x06	; 6
+ 4be:	31 97       	sbiw	r30, 0x01	; 1
+ 4c0:	f1 f7       	brne	.-4      	; 0x4be <__stack+0x5f>
+ 4c2:	00 c0       	rjmp	.+0      	; 0x4c4 <__stack+0x65>
+ 4c4:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 4c6:	28 bb       	out	0x18, r18	; 24
+ 4c8:	ef e3       	ldi	r30, 0x3F	; 63
+ 4ca:	f6 e0       	ldi	r31, 0x06	; 6
+ 4cc:	31 97       	sbiw	r30, 0x01	; 1
+ 4ce:	f1 f7       	brne	.-4      	; 0x4cc <__stack+0x6d>
+ 4d0:	00 c0       	rjmp	.+0      	; 0x4d2 <__stack+0x73>
+ 4d2:	00 00       	nop
+			}
+			case 'O':{
+				led=0x41;		_delay_us(tim);
+ 4d4:	38 bb       	out	0x18, r19	; 24
+ 4d6:	ef e3       	ldi	r30, 0x3F	; 63
+ 4d8:	f6 e0       	ldi	r31, 0x06	; 6
+ 4da:	31 97       	sbiw	r30, 0x01	; 1
+ 4dc:	f1 f7       	brne	.-4      	; 0x4da <__stack+0x7b>
+ 4de:	00 c0       	rjmp	.+0      	; 0x4e0 <__stack+0x81>
+ 4e0:	00 00       	nop
+				led=0x3E;		_delay_us(3*tim);
+ 4e2:	68 bb       	out	0x18, r22	; 24
+ 4e4:	ef eb       	ldi	r30, 0xBF	; 191
+ 4e6:	f2 e1       	ldi	r31, 0x12	; 18
+ 4e8:	31 97       	sbiw	r30, 0x01	; 1
+ 4ea:	f1 f7       	brne	.-4      	; 0x4e8 <__stack+0x89>
+ 4ec:	00 c0       	rjmp	.+0      	; 0x4ee <__stack+0x8f>
+ 4ee:	00 00       	nop
+				led=0x41;		_delay_us(tim);
+ 4f0:	38 bb       	out	0x18, r19	; 24
+ 4f2:	ef e3       	ldi	r30, 0x3F	; 63
+ 4f4:	f6 e0       	ldi	r31, 0x06	; 6
+ 4f6:	31 97       	sbiw	r30, 0x01	; 1
+ 4f8:	f1 f7       	brne	.-4      	; 0x4f6 <__stack+0x97>
+ 4fa:	00 c0       	rjmp	.+0      	; 0x4fc <__stack+0x9d>
+ 4fc:	00 00       	nop
+				led=0xFF;		_delay_us(tim);				
+ 4fe:	28 bb       	out	0x18, r18	; 24
+ 500:	ef e3       	ldi	r30, 0x3F	; 63
+ 502:	f6 e0       	ldi	r31, 0x06	; 6
+ 504:	31 97       	sbiw	r30, 0x01	; 1
+ 506:	f1 f7       	brne	.-4      	; 0x504 <__stack+0xa5>
+ 508:	00 c0       	rjmp	.+0      	; 0x50a <__stack+0xab>
+ 50a:	00 00       	nop
+ 50c:	a6 c1       	rjmp	.+844    	; 0x85a <__stack+0x3fb>
+			}
+			break;			
+			case 'P':{
+				led=0x40;		_delay_us(tim);
+ 50e:	18 bb       	out	0x18, r17	; 24
+ 510:	ef e3       	ldi	r30, 0x3F	; 63
+ 512:	f6 e0       	ldi	r31, 0x06	; 6
+ 514:	31 97       	sbiw	r30, 0x01	; 1
+ 516:	f1 f7       	brne	.-4      	; 0x514 <__stack+0xb5>
+ 518:	00 c0       	rjmp	.+0      	; 0x51a <__stack+0xbb>
+ 51a:	00 00       	nop
+				led=0x37;		_delay_us(3*tim);
+ 51c:	08 bb       	out	0x18, r16	; 24
+ 51e:	ef eb       	ldi	r30, 0xBF	; 191
+ 520:	f2 e1       	ldi	r31, 0x12	; 18
+ 522:	31 97       	sbiw	r30, 0x01	; 1
+ 524:	f1 f7       	brne	.-4      	; 0x522 <__stack+0xc3>
+ 526:	00 c0       	rjmp	.+0      	; 0x528 <__stack+0xc9>
+ 528:	00 00       	nop
+				led=0x4F;		_delay_us(tim);
+ 52a:	98 bb       	out	0x18, r25	; 24
+ 52c:	ef e3       	ldi	r30, 0x3F	; 63
+ 52e:	f6 e0       	ldi	r31, 0x06	; 6
+ 530:	31 97       	sbiw	r30, 0x01	; 1
+ 532:	f1 f7       	brne	.-4      	; 0x530 <__stack+0xd1>
+ 534:	00 c0       	rjmp	.+0      	; 0x536 <__stack+0xd7>
+ 536:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 538:	28 bb       	out	0x18, r18	; 24
+ 53a:	ef e3       	ldi	r30, 0x3F	; 63
+ 53c:	f6 e0       	ldi	r31, 0x06	; 6
+ 53e:	31 97       	sbiw	r30, 0x01	; 1
+ 540:	f1 f7       	brne	.-4      	; 0x53e <__stack+0xdf>
+ 542:	00 c0       	rjmp	.+0      	; 0x544 <__stack+0xe5>
+ 544:	00 00       	nop
+ 546:	89 c1       	rjmp	.+786    	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'Q':{
+				led=0x41;		_delay_us(tim);
+ 548:	38 bb       	out	0x18, r19	; 24
+ 54a:	ef e3       	ldi	r30, 0x3F	; 63
+ 54c:	f6 e0       	ldi	r31, 0x06	; 6
+ 54e:	31 97       	sbiw	r30, 0x01	; 1
+ 550:	f1 f7       	brne	.-4      	; 0x54e <__stack+0xef>
+ 552:	00 c0       	rjmp	.+0      	; 0x554 <__stack+0xf5>
+ 554:	00 00       	nop
+				led=0x3E;		_delay_us(2*tim);
+ 556:	68 bb       	out	0x18, r22	; 24
+ 558:	ef e7       	ldi	r30, 0x7F	; 127
+ 55a:	fc e0       	ldi	r31, 0x0C	; 12
+ 55c:	31 97       	sbiw	r30, 0x01	; 1
+ 55e:	f1 f7       	brne	.-4      	; 0x55c <__stack+0xfd>
+ 560:	00 c0       	rjmp	.+0      	; 0x562 <__stack+0x103>
+ 562:	00 00       	nop
+				led=0x41;		_delay_us(tim);
+ 564:	38 bb       	out	0x18, r19	; 24
+ 566:	ef e3       	ldi	r30, 0x3F	; 63
+ 568:	f6 e0       	ldi	r31, 0x06	; 6
+ 56a:	31 97       	sbiw	r30, 0x01	; 1
+ 56c:	f1 f7       	brne	.-4      	; 0x56a <__stack+0x10b>
+ 56e:	00 c0       	rjmp	.+0      	; 0x570 <__stack+0x111>
+ 570:	00 00       	nop
+				led=0x7E;		_delay_us(tim);
+ 572:	78 bb       	out	0x18, r23	; 24
+ 574:	ef e3       	ldi	r30, 0x3F	; 63
+ 576:	f6 e0       	ldi	r31, 0x06	; 6
+ 578:	31 97       	sbiw	r30, 0x01	; 1
+ 57a:	f1 f7       	brne	.-4      	; 0x578 <__stack+0x119>
+ 57c:	00 c0       	rjmp	.+0      	; 0x57e <__stack+0x11f>
+ 57e:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 580:	28 bb       	out	0x18, r18	; 24
+ 582:	ef e3       	ldi	r30, 0x3F	; 63
+ 584:	f6 e0       	ldi	r31, 0x06	; 6
+ 586:	31 97       	sbiw	r30, 0x01	; 1
+ 588:	f1 f7       	brne	.-4      	; 0x586 <__stack+0x127>
+ 58a:	00 c0       	rjmp	.+0      	; 0x58c <__stack+0x12d>
+ 58c:	00 00       	nop
+ 58e:	65 c1       	rjmp	.+714    	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'R':{
+				led=0x40;		_delay_us(tim);
+ 590:	18 bb       	out	0x18, r17	; 24
+ 592:	ef e3       	ldi	r30, 0x3F	; 63
+ 594:	f6 e0       	ldi	r31, 0x06	; 6
+ 596:	31 97       	sbiw	r30, 0x01	; 1
+ 598:	f1 f7       	brne	.-4      	; 0x596 <__stack+0x137>
+ 59a:	00 c0       	rjmp	.+0      	; 0x59c <__stack+0x13d>
+ 59c:	00 00       	nop
+				led=0x37;		_delay_us(tim);
+ 59e:	08 bb       	out	0x18, r16	; 24
+ 5a0:	ef e3       	ldi	r30, 0x3F	; 63
+ 5a2:	f6 e0       	ldi	r31, 0x06	; 6
+ 5a4:	31 97       	sbiw	r30, 0x01	; 1
+ 5a6:	f1 f7       	brne	.-4      	; 0x5a4 <__stack+0x145>
+ 5a8:	00 c0       	rjmp	.+0      	; 0x5aa <__stack+0x14b>
+ 5aa:	00 00       	nop
+				led=0x33;		_delay_us(tim);
+ 5ac:	68 ba       	out	0x18, r6	; 24
+ 5ae:	ef e3       	ldi	r30, 0x3F	; 63
+ 5b0:	f6 e0       	ldi	r31, 0x06	; 6
+ 5b2:	31 97       	sbiw	r30, 0x01	; 1
+ 5b4:	f1 f7       	brne	.-4      	; 0x5b2 <__stack+0x153>
+ 5b6:	00 c0       	rjmp	.+0      	; 0x5b8 <__stack+0x159>
+ 5b8:	00 00       	nop
+				led=0x35;		_delay_us(tim);
+ 5ba:	f5 e3       	ldi	r31, 0x35	; 53
+ 5bc:	f8 bb       	out	0x18, r31	; 24
+ 5be:	ef e3       	ldi	r30, 0x3F	; 63
+ 5c0:	f6 e0       	ldi	r31, 0x06	; 6
+ 5c2:	31 97       	sbiw	r30, 0x01	; 1
+ 5c4:	f1 f7       	brne	.-4      	; 0x5c2 <__stack+0x163>
+ 5c6:	00 c0       	rjmp	.+0      	; 0x5c8 <__stack+0x169>
+ 5c8:	00 00       	nop
+				led=0x4E;		_delay_us(tim);
+ 5ca:	fe e4       	ldi	r31, 0x4E	; 78
+ 5cc:	f8 bb       	out	0x18, r31	; 24
+ 5ce:	ef e3       	ldi	r30, 0x3F	; 63
+ 5d0:	f6 e0       	ldi	r31, 0x06	; 6
+ 5d2:	31 97       	sbiw	r30, 0x01	; 1
+ 5d4:	f1 f7       	brne	.-4      	; 0x5d2 <__stack+0x173>
+ 5d6:	00 c0       	rjmp	.+0      	; 0x5d8 <__stack+0x179>
+ 5d8:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 5da:	28 bb       	out	0x18, r18	; 24
+ 5dc:	ef e3       	ldi	r30, 0x3F	; 63
+ 5de:	f6 e0       	ldi	r31, 0x06	; 6
+ 5e0:	31 97       	sbiw	r30, 0x01	; 1
+ 5e2:	f1 f7       	brne	.-4      	; 0x5e0 <__stack+0x181>
+ 5e4:	00 c0       	rjmp	.+0      	; 0x5e6 <__stack+0x187>
+ 5e6:	00 00       	nop
+ 5e8:	38 c1       	rjmp	.+624    	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'S':{
+				led=0x4D;		_delay_us(tim);
+ 5ea:	fd e4       	ldi	r31, 0x4D	; 77
+ 5ec:	f8 bb       	out	0x18, r31	; 24
+ 5ee:	ef e3       	ldi	r30, 0x3F	; 63
+ 5f0:	f6 e0       	ldi	r31, 0x06	; 6
+ 5f2:	31 97       	sbiw	r30, 0x01	; 1
+ 5f4:	f1 f7       	brne	.-4      	; 0x5f2 <__stack+0x193>
+ 5f6:	00 c0       	rjmp	.+0      	; 0x5f8 <__stack+0x199>
+ 5f8:	00 00       	nop
+				led=0x36;		_delay_us(3*tim);
+ 5fa:	38 ba       	out	0x18, r3	; 24
+ 5fc:	ef eb       	ldi	r30, 0xBF	; 191
+ 5fe:	f2 e1       	ldi	r31, 0x12	; 18
+ 600:	31 97       	sbiw	r30, 0x01	; 1
+ 602:	f1 f7       	brne	.-4      	; 0x600 <__stack+0x1a1>
+ 604:	00 c0       	rjmp	.+0      	; 0x606 <__stack+0x1a7>
+ 606:	00 00       	nop
+				led=0x59;		_delay_us(tim);
+ 608:	d8 ba       	out	0x18, r13	; 24
+ 60a:	ef e3       	ldi	r30, 0x3F	; 63
+ 60c:	f6 e0       	ldi	r31, 0x06	; 6
+ 60e:	31 97       	sbiw	r30, 0x01	; 1
+ 610:	f1 f7       	brne	.-4      	; 0x60e <__stack+0x1af>
+ 612:	00 c0       	rjmp	.+0      	; 0x614 <__stack+0x1b5>
+ 614:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 616:	28 bb       	out	0x18, r18	; 24
+ 618:	ef e3       	ldi	r30, 0x3F	; 63
+ 61a:	f6 e0       	ldi	r31, 0x06	; 6
+ 61c:	31 97       	sbiw	r30, 0x01	; 1
+ 61e:	f1 f7       	brne	.-4      	; 0x61c <__stack+0x1bd>
+ 620:	00 c0       	rjmp	.+0      	; 0x622 <__stack+0x1c3>
+ 622:	00 00       	nop
+ 624:	1a c1       	rjmp	.+564    	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'T':{
+				led=0x3F;		_delay_us(2*tim);
+ 626:	f8 ba       	out	0x18, r15	; 24
+ 628:	ef e7       	ldi	r30, 0x7F	; 127
+ 62a:	fc e0       	ldi	r31, 0x0C	; 12
+ 62c:	31 97       	sbiw	r30, 0x01	; 1
+ 62e:	f1 f7       	brne	.-4      	; 0x62c <__stack+0x1cd>
+ 630:	00 c0       	rjmp	.+0      	; 0x632 <__stack+0x1d3>
+ 632:	00 00       	nop
+				led=0x00;		_delay_us(tim);
+ 634:	18 ba       	out	0x18, r1	; 24
+ 636:	ef e3       	ldi	r30, 0x3F	; 63
+ 638:	f6 e0       	ldi	r31, 0x06	; 6
+ 63a:	31 97       	sbiw	r30, 0x01	; 1
+ 63c:	f1 f7       	brne	.-4      	; 0x63a <__stack+0x1db>
+ 63e:	00 c0       	rjmp	.+0      	; 0x640 <__stack+0x1e1>
+ 640:	00 00       	nop
+				led=0x3F;		_delay_us(2*tim);
+ 642:	f8 ba       	out	0x18, r15	; 24
+ 644:	ef e7       	ldi	r30, 0x7F	; 127
+ 646:	fc e0       	ldi	r31, 0x0C	; 12
+ 648:	31 97       	sbiw	r30, 0x01	; 1
+ 64a:	f1 f7       	brne	.-4      	; 0x648 <__stack+0x1e9>
+ 64c:	00 c0       	rjmp	.+0      	; 0x64e <__stack+0x1ef>
+ 64e:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 650:	28 bb       	out	0x18, r18	; 24
+ 652:	ef e3       	ldi	r30, 0x3F	; 63
+ 654:	f6 e0       	ldi	r31, 0x06	; 6
+ 656:	31 97       	sbiw	r30, 0x01	; 1
+ 658:	f1 f7       	brne	.-4      	; 0x656 <__stack+0x1f7>
+ 65a:	00 c0       	rjmp	.+0      	; 0x65c <__stack+0x1fd>
+ 65c:	00 00       	nop
+ 65e:	fd c0       	rjmp	.+506    	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'U':{
+				led=0x01;		_delay_us(tim);
+ 660:	48 ba       	out	0x18, r4	; 24
+ 662:	ef e3       	ldi	r30, 0x3F	; 63
+ 664:	f6 e0       	ldi	r31, 0x06	; 6
+ 666:	31 97       	sbiw	r30, 0x01	; 1
+ 668:	f1 f7       	brne	.-4      	; 0x666 <__stack+0x207>
+ 66a:	00 c0       	rjmp	.+0      	; 0x66c <__stack+0x20d>
+ 66c:	00 00       	nop
+				led=0x7E;		_delay_us(3*tim);
+ 66e:	78 bb       	out	0x18, r23	; 24
+ 670:	ef eb       	ldi	r30, 0xBF	; 191
+ 672:	f2 e1       	ldi	r31, 0x12	; 18
+ 674:	31 97       	sbiw	r30, 0x01	; 1
+ 676:	f1 f7       	brne	.-4      	; 0x674 <__stack+0x215>
+ 678:	00 c0       	rjmp	.+0      	; 0x67a <__stack+0x21b>
+ 67a:	00 00       	nop
+				led=0x01;		_delay_us(tim);
+ 67c:	48 ba       	out	0x18, r4	; 24
+ 67e:	ef e3       	ldi	r30, 0x3F	; 63
+ 680:	f6 e0       	ldi	r31, 0x06	; 6
+ 682:	31 97       	sbiw	r30, 0x01	; 1
+ 684:	f1 f7       	brne	.-4      	; 0x682 <__stack+0x223>
+ 686:	00 c0       	rjmp	.+0      	; 0x688 <__stack+0x229>
+ 688:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 68a:	28 bb       	out	0x18, r18	; 24
+ 68c:	ef e3       	ldi	r30, 0x3F	; 63
+ 68e:	f6 e0       	ldi	r31, 0x06	; 6
+ 690:	31 97       	sbiw	r30, 0x01	; 1
+ 692:	f1 f7       	brne	.-4      	; 0x690 <__stack+0x231>
+ 694:	00 c0       	rjmp	.+0      	; 0x696 <__stack+0x237>
+ 696:	00 00       	nop
+ 698:	e0 c0       	rjmp	.+448    	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'V':{
+				led=0x03;		_delay_us(tim);
+ 69a:	c8 ba       	out	0x18, r12	; 24
+ 69c:	ef e3       	ldi	r30, 0x3F	; 63
+ 69e:	f6 e0       	ldi	r31, 0x06	; 6
+ 6a0:	31 97       	sbiw	r30, 0x01	; 1
+ 6a2:	f1 f7       	brne	.-4      	; 0x6a0 <__stack+0x241>
+ 6a4:	00 c0       	rjmp	.+0      	; 0x6a6 <__stack+0x247>
+ 6a6:	00 00       	nop
+				led=0x7D;		_delay_us(tim);
+ 6a8:	e8 ba       	out	0x18, r14	; 24
+ 6aa:	ef e3       	ldi	r30, 0x3F	; 63
+ 6ac:	f6 e0       	ldi	r31, 0x06	; 6
+ 6ae:	31 97       	sbiw	r30, 0x01	; 1
+ 6b0:	f1 f7       	brne	.-4      	; 0x6ae <__stack+0x24f>
+ 6b2:	00 c0       	rjmp	.+0      	; 0x6b4 <__stack+0x255>
+ 6b4:	00 00       	nop
+				led=0x7E;		_delay_us(tim);
+ 6b6:	78 bb       	out	0x18, r23	; 24
+ 6b8:	ef e3       	ldi	r30, 0x3F	; 63
+ 6ba:	f6 e0       	ldi	r31, 0x06	; 6
+ 6bc:	31 97       	sbiw	r30, 0x01	; 1
+ 6be:	f1 f7       	brne	.-4      	; 0x6bc <__stack+0x25d>
+ 6c0:	00 c0       	rjmp	.+0      	; 0x6c2 <__stack+0x263>
+ 6c2:	00 00       	nop
+				led=0x7D;		_delay_us(tim);
+ 6c4:	e8 ba       	out	0x18, r14	; 24
+ 6c6:	ef e3       	ldi	r30, 0x3F	; 63
+ 6c8:	f6 e0       	ldi	r31, 0x06	; 6
+ 6ca:	31 97       	sbiw	r30, 0x01	; 1
+ 6cc:	f1 f7       	brne	.-4      	; 0x6ca <__stack+0x26b>
+ 6ce:	00 c0       	rjmp	.+0      	; 0x6d0 <__stack+0x271>
+ 6d0:	00 00       	nop
+				led=0x03;		_delay_us(tim);
+ 6d2:	c8 ba       	out	0x18, r12	; 24
+ 6d4:	ef e3       	ldi	r30, 0x3F	; 63
+ 6d6:	f6 e0       	ldi	r31, 0x06	; 6
+ 6d8:	31 97       	sbiw	r30, 0x01	; 1
+ 6da:	f1 f7       	brne	.-4      	; 0x6d8 <__stack+0x279>
+ 6dc:	00 c0       	rjmp	.+0      	; 0x6de <__stack+0x27f>
+ 6de:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 6e0:	28 bb       	out	0x18, r18	; 24
+ 6e2:	ef e3       	ldi	r30, 0x3F	; 63
+ 6e4:	f6 e0       	ldi	r31, 0x06	; 6
+ 6e6:	31 97       	sbiw	r30, 0x01	; 1
+ 6e8:	f1 f7       	brne	.-4      	; 0x6e6 <__stack+0x287>
+ 6ea:	00 c0       	rjmp	.+0      	; 0x6ec <__stack+0x28d>
+ 6ec:	00 00       	nop
+ 6ee:	b5 c0       	rjmp	.+362    	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'W':{
+				led=0x01;		_delay_us(tim);
+ 6f0:	48 ba       	out	0x18, r4	; 24
+ 6f2:	ef e3       	ldi	r30, 0x3F	; 63
+ 6f4:	f6 e0       	ldi	r31, 0x06	; 6
+ 6f6:	31 97       	sbiw	r30, 0x01	; 1
+ 6f8:	f1 f7       	brne	.-4      	; 0x6f6 <__stack+0x297>
+ 6fa:	00 c0       	rjmp	.+0      	; 0x6fc <__stack+0x29d>
+ 6fc:	00 00       	nop
+				led=0x7E;		_delay_us(tim);
+ 6fe:	78 bb       	out	0x18, r23	; 24
+ 700:	ef e3       	ldi	r30, 0x3F	; 63
+ 702:	f6 e0       	ldi	r31, 0x06	; 6
+ 704:	31 97       	sbiw	r30, 0x01	; 1
+ 706:	f1 f7       	brne	.-4      	; 0x704 <__stack+0x2a5>
+ 708:	00 c0       	rjmp	.+0      	; 0x70a <__stack+0x2ab>
+ 70a:	00 00       	nop
+				led=0x01;		_delay_us(tim);
+ 70c:	48 ba       	out	0x18, r4	; 24
+ 70e:	ef e3       	ldi	r30, 0x3F	; 63
+ 710:	f6 e0       	ldi	r31, 0x06	; 6
+ 712:	31 97       	sbiw	r30, 0x01	; 1
+ 714:	f1 f7       	brne	.-4      	; 0x712 <__stack+0x2b3>
+ 716:	00 c0       	rjmp	.+0      	; 0x718 <__stack+0x2b9>
+ 718:	00 00       	nop
+				led=0x7E;		_delay_us(tim);
+ 71a:	78 bb       	out	0x18, r23	; 24
+ 71c:	ef e3       	ldi	r30, 0x3F	; 63
+ 71e:	f6 e0       	ldi	r31, 0x06	; 6
+ 720:	31 97       	sbiw	r30, 0x01	; 1
+ 722:	f1 f7       	brne	.-4      	; 0x720 <__stack+0x2c1>
+ 724:	00 c0       	rjmp	.+0      	; 0x726 <__stack+0x2c7>
+ 726:	00 00       	nop
+				led=0x01;		_delay_us(tim);
+ 728:	48 ba       	out	0x18, r4	; 24
+ 72a:	ef e3       	ldi	r30, 0x3F	; 63
+ 72c:	f6 e0       	ldi	r31, 0x06	; 6
+ 72e:	31 97       	sbiw	r30, 0x01	; 1
+ 730:	f1 f7       	brne	.-4      	; 0x72e <__stack+0x2cf>
+ 732:	00 c0       	rjmp	.+0      	; 0x734 <__stack+0x2d5>
+ 734:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 736:	28 bb       	out	0x18, r18	; 24
+ 738:	ef e3       	ldi	r30, 0x3F	; 63
+ 73a:	f6 e0       	ldi	r31, 0x06	; 6
+ 73c:	31 97       	sbiw	r30, 0x01	; 1
+ 73e:	f1 f7       	brne	.-4      	; 0x73c <__stack+0x2dd>
+ 740:	00 c0       	rjmp	.+0      	; 0x742 <__stack+0x2e3>
+ 742:	00 00       	nop
+ 744:	8a c0       	rjmp	.+276    	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'X':{
+				led=0x1C;		_delay_us(tim);
+ 746:	28 ba       	out	0x18, r2	; 24
+ 748:	ef e3       	ldi	r30, 0x3F	; 63
+ 74a:	f6 e0       	ldi	r31, 0x06	; 6
+ 74c:	31 97       	sbiw	r30, 0x01	; 1
+ 74e:	f1 f7       	brne	.-4      	; 0x74c <__stack+0x2ed>
+ 750:	00 c0       	rjmp	.+0      	; 0x752 <__stack+0x2f3>
+ 752:	00 00       	nop
+				led=0x6B;		_delay_us(tim);
+ 754:	fb e6       	ldi	r31, 0x6B	; 107
+ 756:	f8 bb       	out	0x18, r31	; 24
+ 758:	ef e3       	ldi	r30, 0x3F	; 63
+ 75a:	f6 e0       	ldi	r31, 0x06	; 6
+ 75c:	31 97       	sbiw	r30, 0x01	; 1
+ 75e:	f1 f7       	brne	.-4      	; 0x75c <__stack+0x2fd>
+ 760:	00 c0       	rjmp	.+0      	; 0x762 <__stack+0x303>
+ 762:	00 00       	nop
+				led=0x77;		_delay_us(tim);
+ 764:	f7 e7       	ldi	r31, 0x77	; 119
+ 766:	f8 bb       	out	0x18, r31	; 24
+ 768:	ef e3       	ldi	r30, 0x3F	; 63
+ 76a:	f6 e0       	ldi	r31, 0x06	; 6
+ 76c:	31 97       	sbiw	r30, 0x01	; 1
+ 76e:	f1 f7       	brne	.-4      	; 0x76c <__stack+0x30d>
+ 770:	00 c0       	rjmp	.+0      	; 0x772 <__stack+0x313>
+ 772:	00 00       	nop
+				led=0x6B;		_delay_us(tim);
+ 774:	fb e6       	ldi	r31, 0x6B	; 107
+ 776:	f8 bb       	out	0x18, r31	; 24
+ 778:	ef e3       	ldi	r30, 0x3F	; 63
+ 77a:	f6 e0       	ldi	r31, 0x06	; 6
+ 77c:	31 97       	sbiw	r30, 0x01	; 1
+ 77e:	f1 f7       	brne	.-4      	; 0x77c <__stack+0x31d>
+ 780:	00 c0       	rjmp	.+0      	; 0x782 <__stack+0x323>
+ 782:	00 00       	nop
+				led=0x1C;		_delay_us(tim);
+ 784:	28 ba       	out	0x18, r2	; 24
+ 786:	ef e3       	ldi	r30, 0x3F	; 63
+ 788:	f6 e0       	ldi	r31, 0x06	; 6
+ 78a:	31 97       	sbiw	r30, 0x01	; 1
+ 78c:	f1 f7       	brne	.-4      	; 0x78a <__stack+0x32b>
+ 78e:	00 c0       	rjmp	.+0      	; 0x790 <__stack+0x331>
+ 790:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 792:	28 bb       	out	0x18, r18	; 24
+ 794:	ef e3       	ldi	r30, 0x3F	; 63
+ 796:	f6 e0       	ldi	r31, 0x06	; 6
+ 798:	31 97       	sbiw	r30, 0x01	; 1
+ 79a:	f1 f7       	brne	.-4      	; 0x798 <__stack+0x339>
+ 79c:	00 c0       	rjmp	.+0      	; 0x79e <__stack+0x33f>
+ 79e:	00 00       	nop
+ 7a0:	5c c0       	rjmp	.+184    	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'Y':{
+				led=0x1F;		_delay_us(tim);
+ 7a2:	ff e1       	ldi	r31, 0x1F	; 31
+ 7a4:	f8 bb       	out	0x18, r31	; 24
+ 7a6:	ef e3       	ldi	r30, 0x3F	; 63
+ 7a8:	f6 e0       	ldi	r31, 0x06	; 6
+ 7aa:	31 97       	sbiw	r30, 0x01	; 1
+ 7ac:	f1 f7       	brne	.-4      	; 0x7aa <__stack+0x34b>
+ 7ae:	00 c0       	rjmp	.+0      	; 0x7b0 <__stack+0x351>
+ 7b0:	00 00       	nop
+				led=0x6F;		_delay_us(tim);
+ 7b2:	ff e6       	ldi	r31, 0x6F	; 111
+ 7b4:	f8 bb       	out	0x18, r31	; 24
+ 7b6:	ef e3       	ldi	r30, 0x3F	; 63
+ 7b8:	f6 e0       	ldi	r31, 0x06	; 6
+ 7ba:	31 97       	sbiw	r30, 0x01	; 1
+ 7bc:	f1 f7       	brne	.-4      	; 0x7ba <__stack+0x35b>
+ 7be:	00 c0       	rjmp	.+0      	; 0x7c0 <__stack+0x361>
+ 7c0:	00 00       	nop
+				led=0x70;		_delay_us(tim);
+ 7c2:	f0 e7       	ldi	r31, 0x70	; 112
+ 7c4:	f8 bb       	out	0x18, r31	; 24
+ 7c6:	ef e3       	ldi	r30, 0x3F	; 63
+ 7c8:	f6 e0       	ldi	r31, 0x06	; 6
+ 7ca:	31 97       	sbiw	r30, 0x01	; 1
+ 7cc:	f1 f7       	brne	.-4      	; 0x7ca <__stack+0x36b>
+ 7ce:	00 c0       	rjmp	.+0      	; 0x7d0 <__stack+0x371>
+ 7d0:	00 00       	nop
+				led=0x6F;		_delay_us(tim);
+ 7d2:	ff e6       	ldi	r31, 0x6F	; 111
+ 7d4:	f8 bb       	out	0x18, r31	; 24
+ 7d6:	ef e3       	ldi	r30, 0x3F	; 63
+ 7d8:	f6 e0       	ldi	r31, 0x06	; 6
+ 7da:	31 97       	sbiw	r30, 0x01	; 1
+ 7dc:	f1 f7       	brne	.-4      	; 0x7da <__stack+0x37b>
+ 7de:	00 c0       	rjmp	.+0      	; 0x7e0 <__stack+0x381>
+ 7e0:	00 00       	nop
+				led=0x1F;		_delay_us(tim);
+ 7e2:	ff e1       	ldi	r31, 0x1F	; 31
+ 7e4:	f8 bb       	out	0x18, r31	; 24
+ 7e6:	ef e3       	ldi	r30, 0x3F	; 63
+ 7e8:	f6 e0       	ldi	r31, 0x06	; 6
+ 7ea:	31 97       	sbiw	r30, 0x01	; 1
+ 7ec:	f1 f7       	brne	.-4      	; 0x7ea <__stack+0x38b>
+ 7ee:	00 c0       	rjmp	.+0      	; 0x7f0 <__stack+0x391>
+ 7f0:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 7f2:	28 bb       	out	0x18, r18	; 24
+ 7f4:	ef e3       	ldi	r30, 0x3F	; 63
+ 7f6:	f6 e0       	ldi	r31, 0x06	; 6
+ 7f8:	31 97       	sbiw	r30, 0x01	; 1
+ 7fa:	f1 f7       	brne	.-4      	; 0x7f8 <__stack+0x399>
+ 7fc:	00 c0       	rjmp	.+0      	; 0x7fe <__stack+0x39f>
+ 7fe:	00 00       	nop
+ 800:	2c c0       	rjmp	.+88     	; 0x85a <__stack+0x3fb>
+			}
+			break;
+			case 'Z':{
+				led=0x1C;		_delay_us(tim);
+ 802:	28 ba       	out	0x18, r2	; 24
+ 804:	ef e3       	ldi	r30, 0x3F	; 63
+ 806:	f6 e0       	ldi	r31, 0x06	; 6
+ 808:	31 97       	sbiw	r30, 0x01	; 1
+ 80a:	f1 f7       	brne	.-4      	; 0x808 <__stack+0x3a9>
+ 80c:	00 c0       	rjmp	.+0      	; 0x80e <__stack+0x3af>
+ 80e:	00 00       	nop
+				led=0x3A;		_delay_us(tim);
+ 810:	fa e3       	ldi	r31, 0x3A	; 58
+ 812:	f8 bb       	out	0x18, r31	; 24
+ 814:	ef e3       	ldi	r30, 0x3F	; 63
+ 816:	f6 e0       	ldi	r31, 0x06	; 6
+ 818:	31 97       	sbiw	r30, 0x01	; 1
+ 81a:	f1 f7       	brne	.-4      	; 0x818 <__stack+0x3b9>
+ 81c:	00 c0       	rjmp	.+0      	; 0x81e <__stack+0x3bf>
+ 81e:	00 00       	nop
+				led=0x36;		_delay_us(tim);
+ 820:	38 ba       	out	0x18, r3	; 24
+ 822:	ef e3       	ldi	r30, 0x3F	; 63
+ 824:	f6 e0       	ldi	r31, 0x06	; 6
+ 826:	31 97       	sbiw	r30, 0x01	; 1
+ 828:	f1 f7       	brne	.-4      	; 0x826 <__stack+0x3c7>
+ 82a:	00 c0       	rjmp	.+0      	; 0x82c <__stack+0x3cd>
+ 82c:	00 00       	nop
+				led=0x2E;		_delay_us(tim);
+ 82e:	fe e2       	ldi	r31, 0x2E	; 46
+ 830:	f8 bb       	out	0x18, r31	; 24
+ 832:	ef e3       	ldi	r30, 0x3F	; 63
+ 834:	f6 e0       	ldi	r31, 0x06	; 6
+ 836:	31 97       	sbiw	r30, 0x01	; 1
+ 838:	f1 f7       	brne	.-4      	; 0x836 <__stack+0x3d7>
+ 83a:	00 c0       	rjmp	.+0      	; 0x83c <__stack+0x3dd>
+ 83c:	00 00       	nop
+				led=0x1C;		_delay_us(tim);
+ 83e:	28 ba       	out	0x18, r2	; 24
+ 840:	ef e3       	ldi	r30, 0x3F	; 63
+ 842:	f6 e0       	ldi	r31, 0x06	; 6
+ 844:	31 97       	sbiw	r30, 0x01	; 1
+ 846:	f1 f7       	brne	.-4      	; 0x844 <__stack+0x3e5>
+ 848:	00 c0       	rjmp	.+0      	; 0x84a <__stack+0x3eb>
+ 84a:	00 00       	nop
+				led=0xFF;		_delay_us(tim);
+ 84c:	28 bb       	out	0x18, r18	; 24
+ 84e:	ef e3       	ldi	r30, 0x3F	; 63
+ 850:	f6 e0       	ldi	r31, 0x06	; 6
+ 852:	31 97       	sbiw	r30, 0x01	; 1
+ 854:	f1 f7       	brne	.-4      	; 0x852 <__stack+0x3f3>
+ 856:	00 c0       	rjmp	.+0      	; 0x858 <__stack+0x3f9>
+ 858:	00 00       	nop
+		palabra[1] = 'O';
+		palabra[2] = 'L';
+		palabra[3] = 'A';
+		palabra[4] = 0;
+		
+		for (int i=0; i<4; i++){			
+ 85a:	a4 17       	cp	r26, r20
+ 85c:	b5 07       	cpc	r27, r21
+ 85e:	09 f0       	breq	.+2      	; 0x862 <__stack+0x403>
+ 860:	52 cc       	rjmp	.-1884   	; 0x106 <main+0x8a>
+			}
+			break;
+			
+			}			
+		}		
+		led=0xFF;		_delay_us(20*tim);
+ 862:	78 ba       	out	0x18, r7	; 24
+ 864:	8f ef       	ldi	r24, 0xFF	; 255
+ 866:	9c e7       	ldi	r25, 0x7C	; 124
+ 868:	01 97       	sbiw	r24, 0x01	; 1
+ 86a:	f1 f7       	brne	.-4      	; 0x868 <__stack+0x409>
+ 86c:	00 c0       	rjmp	.+0      	; 0x86e <__stack+0x40f>
+ 86e:	00 00       	nop
+	}
+ 870:	25 cc       	rjmp	.-1974   	; 0xbc <main+0x40>
+
+00000872 <_exit>:
+ 872:	f8 94       	cli
+
+00000874 <__stop_program>:
+ 874:	ff cf       	rjmp	.-2      	; 0x874 <__stop_program>
