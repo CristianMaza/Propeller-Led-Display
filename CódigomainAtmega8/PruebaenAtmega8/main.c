@@ -7,6 +7,9 @@
 char car;
 char palabra[15];
 int i=-1;
+int cont=0;
+int esp=0;
+int an=-1;
 int main(void){
 	
 	UBRRL=ubrr_valor;
@@ -15,17 +18,14 @@ int main(void){
 	DDRB=0xFF;
 	PORTB=0;
 	uint16_t (tim)=(300);
-	while (1){
-		
-		while (i<13){		
+	while (1){				
 			if (UCSRA & (1<<RXC)){
-				i++;
-				palabra[i]=UDR;
-				UDR=palabra[i];
-			}
-		}
-		while(1){
-		for (int j=13; j>-1; j--){
+				an++;
+				palabra[an]=UDR;
+				UDR=palabra[an];
+			}	
+		cont=0;
+		for (int j=an; j>-1; j--){
 		
 		car=palabra[j];
 		switch(car){
@@ -210,17 +210,22 @@ int main(void){
 			break;	
 			case ' ':{
 				led=0xFF;		_delay_us(tim);
+				cont-=4;
 			}
 			break;
 			case '_':{
 				led=0xFF;		_delay_us(tim*5);
 			}
-			break;
-		}		//Fin del switch case
-		led=0xFF;		_delay_us(tim);
+			break;	
+			}		//Fin del switch case
+			led=0xFF;		_delay_us(tim);
+			cont+=6;
 		}//Fin del for
-		led=0xFF;		_delay_us(46*tim);
-		}//Fin while interno
+		esp=125-cont;
+		for (int k=esp; k>0; k--){			
+			led=0xFF;		_delay_us(tim);			
+		}
+	  //Fin while interno
 	}//Fin del While
 }//Fin del Main
 
