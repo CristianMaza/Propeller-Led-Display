@@ -5,7 +5,8 @@
 #define baud_rate 9600 //bps -- ingresar valor de baud rate  // velocidad de comunicacion // generador de tasa de transferencia preestablecida por el numero del modulo.
 #define ubrr_valor (((F_CPU / (baud_rate * 16UL))) - 1) // 51
 char car='A';
-int o=1;
+int o;
+
 const unsigned char bibl[27][6]={
 	0x40, 0x37, 0x37, 0x37, 0x40, 0xFF,//A
 	0x49, 0x36, 0x36, 0x36, 0x00, 0xFF,//B
@@ -32,7 +33,7 @@ const unsigned char bibl[27][6]={
 	0x01, 0x7E, 0x01, 0x7E, 0x01, 0xFF,//W
 	0x1C, 0x6B, 0x77, 0x6B, 0x1C, 0xFF,//X
 	0x1F, 0x6F, 0x70, 0x6F, 0x1F, 0xFF,//Y
-	0x1C, 0x2E, 0x36, 0x3A, 0x1C, 0xFF,//Z	
+	0x1C, 0x2E, 0x36, 0x3A, 0x1C, 0xFF//Z	
 };
 
 
@@ -54,63 +55,67 @@ int main(void){
 				
 		
 		switch(car){			
-			case 'A': o=1;			
-			break; 
-			case 'B': o=2;
+			case 'A': o=0;			
 			break;
-			case 'C': o=3;
+			case 'B': o=1;
 			break;
-			case 'D': o=4;					
+			case 'C': o=2;
 			break;
-			case 'E': o=5;
+			case 'D': o=3;					
 			break;
-			case 'F': o=6;
+			case 'E': o=4;
+			break;
+			case 'F': o=5;
 			break;			
-			case 'G': o=7;
+			case 'G': o=6;
 			break;
-			case 'H': o=8;
+			case 'H': o=7;
 			break;
-			case 'I': o=9;
+			case 'I': o=8;
 			break;
-			case 'J': o=10;
+			case 'J': o=9;
 			break;
-			case 'K': o=11;
+			case 'K': o=10;
 			break;
-			case 'L': o=12;
+			case 'L': o=11;
 			break;
-			case 'M': o=13;
+			case 'M': o=12;
 			break;
-			case 'N': o=14;
+			case 'N': o=13;
 			break;
-			case 'O': o=15;
+			case 'O': o=14;
 			break;
-			case 'P': o=16;
+			case 'P': o=15;
 			break;
-			case 'Q': o=17;
+			case 'Q': o=16;
 			break;
-			case 'R': o=18;
+			case 'R': o=17;
 			break;
-			case 'S': o=19;
+			case 'S': o=18;
 			break;
-			case 'T': o=20;
+			case 'T': o=19;
 			break;
-			case 'U': o=21;
+			case 'U': o=20;
 			break;
-			case 'V': o=22;
+			case 'V': o=21;
 			break;
-			case 'W': o=23;
+			case 'W': o=22;
 			break;
-			case 'X': o=24;
+			case 'X': o=23;
 			break;
-			case 'Y': o=25;
+			case 'Y': o=24;
 			break;
-			case 'Z': o=26;
+			case 'Z': o=25;
 			break;
-			}		//Fin del switch case
-				//Fin del for	
-		for (int u=1;u<7;u++){
+			case ' ': o=26;
+			break;
+		}		//Fin del switch case
+		for (int u=0;u<6;u++){
 			led=bibl[o][u];
-		    _delay_us(tim);		
+			_delay_us(tim);
+			if ((o==26) &&(u==1)){
+				u=6;
+			}
 		}
 		led=0xFF;		_delay_us(54*tim);
 		
