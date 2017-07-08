@@ -1,208 +1,145 @@
 #define F_CPU 8000000ul
 #include <util/delay.h>
 #include <avr/io.h>
+#include <avr/interrupt.h>
 #define led PORTB
+#define baud_rate 9600 //bps -- ingresar valor de baud rate  // velocidad de comunicacion // generador de tasa de transferencia preestablecida por el numero del modulo.
+#define ubrr_valor (((F_CPU / (baud_rate * 16UL))) - 1) // 51
 char car;
-char palabra[15]= "EMBEBIDOS UTPL";
+char palabra[100];
+int i=-1;
+int cont=0;
+int esp;
+int an=-1;
+int o;
+const unsigned char bibl[27][6]={
+	0x40, 0x37, 0x37, 0x37, 0x40, 0xFF,//A
+	0x49, 0x36, 0x36, 0x36, 0x00, 0xFF,//B
+	0x5D, 0x3E, 0x3E, 0x3E, 0x41, 0xFF,//C
+	0x41, 0x3E, 0x3E, 0x3E, 0x00, 0xFF,//D
+	0x3E, 0x36, 0x36, 0x36, 0x00, 0xFF,//E
+	0x3F, 0x37, 0x37, 0x37, 0x00, 0xFF,//F
+	0x59, 0x32, 0x32, 0x36, 0x41, 0xFF,//G
+	0x00, 0x77, 0x77, 0x77, 0x00, 0xFF,//H
+	0x3E, 0x1C, 0x00, 0x1C, 0x3E, 0xFF,//I
+	0x3F, 0x01, 0x3E, 0x3E, 0x7D, 0xFF,//J
+	0x3E, 0x5D, 0x6B, 0x77, 0x00, 0xFF,//K
+	0x7E, 0x7E, 0x7E, 0x7E, 0x00, 0xFF,//L
+	0x00, 0x1F, 0x40, 0x1F, 0x00, 0xFF,//M
+	0x00, 0x79, 0x73, 0x47, 0x00, 0xFF,//N
+	0x41, 0x3E, 0x3E, 0x3E, 0x41, 0xFF,//O
+	0x4F, 0x37, 0x37, 0x37, 0x40, 0xFF,//P
+	0x7E, 0x41, 0x3E, 0x3E, 0x41, 0xFF,//Q
+	0x4E, 0x35, 0x33, 0x37, 0x40, 0xFF,//R
+	0x59, 0x36, 0x36, 0x36, 0x4D, 0xFF,//S
+	0x3F, 0x3F, 0x00, 0x3F, 0x3F, 0xFF,//T
+	0x01, 0x7E, 0x7E, 0x7E, 0x01, 0xFF,//U
+	0x03, 0x7D, 0x7E, 0x7D, 0x03, 0xFF,//V
+	0x01, 0x7E, 0x01, 0x7E, 0x01, 0xFF,//W
+	0x1C, 0x6B, 0x77, 0x6B, 0x1C, 0xFF,//X
+	0x1F, 0x6F, 0x70, 0x6F, 0x1F, 0xFF,//Y
+	0x1C, 0x2E, 0x36, 0x3A, 0x1C, 0xFF,//Z
+	0xFF, 0xFF, //espacio
+};
+
+ISR(USART_RXC_vect) {	
+	an++;
+	palabra[an]=UDR;
+	if (palabra[an]=='a'){
+		an=-1;
+		palabra[0]=0;
+	}
+}
 
 int main(void){
+	
+	UBRRL=ubrr_valor;
+	UBRRH=0;
+	UCSRB|=(1<<RXEN)|(1<<TXEN)|(1<<RXCIE);
 	DDRB=0xFF;
 	PORTB=0;
-	uint16_t (tim)=(650);
+	sei();
+	uint16_t (tim)=(300);
 	while (1){
-				
-		for (int i=13; i>-1; i--){			
-			car=palabra[i];
 		
-		switch(car){			
-			case 'A': {				
-				led=0x40;		_delay_us(tim);
-				led=0x37;		_delay_us(3*tim);
-				led=0x40;		_delay_us(tim);			
-			}			
-			break;
-			case 'B':{
-				led=0x49;		_delay_us(tim);				
-				led=0x36;		_delay_us(3*tim);
-				led=0x00;		_delay_us(tim);
+		cont=0;
+		for (int j=an; j>-1; j--){
+			
+			car=palabra[j];
+			switch(car){
+				case 'A': o=0;
+				break;
+				case 'B': o=1;
+				break;
+				case 'C': o=2;
+				break;
+				case 'D': o=3;
+				break;
+				case 'E': o=4;
+				break;
+				case 'F': o=5;
+				break;
+				case 'G': o=6;
+				break;
+				case 'H': o=7;
+				break;
+				case 'I': o=8;
+				break;
+				case 'J': o=9;
+				break;
+				case 'K': o=10;
+				break;
+				case 'L': o=11;
+				break;
+				case 'M': o=12;
+				break;
+				case 'N': o=13;
+				break;
+				case 'O': o=14;
+				break;
+				case 'P': o=15;
+				break;
+				case 'Q': o=16;
+				break;
+				case 'R': o=17;
+				break;
+				case 'S': o=18;
+				break;
+				case 'T': o=19;
+				break;
+				case 'U': o=20;
+				break;
+				case 'V': o=21;
+				break;
+				case 'W': o=22;
+				break;
+				case 'X': o=23;
+				break;
+				case 'Y': o=24;
+				break;
+				case 'Z': o=25;
+				break;
+				case ' ': o=26;
+				break;
+				default: o=26;
+				break;
 			}
-			break;
-			case 'C':{				
-				led=0x5D;		_delay_us(tim);
-				led=0x3E;		_delay_us(3*tim);
-				led=0x41;		_delay_us(tim);
-			}
-			break;
-			case 'D':{
-				led=0x41;		_delay_us(tim);				
-				led=0x3E;		_delay_us(3*tim);
-				led=0x00;		_delay_us(tim);				
-			}
-			break;
-			case 'E':{				
-				led=0x3E;		_delay_us(tim);
-				led=0x36;		_delay_us(3*tim);
-				led=0x00;		_delay_us(tim);				
-			}
-			break;
-			case 'F':{				
-				led=0x3F;		_delay_us(tim);
-				led=0x37;		_delay_us(3*tim);
-				led=0x00;		_delay_us(tim);
-			}
-			break;
-			case 'G':{				
-				led=0x59;		_delay_us(tim);
-				led=0x32;		_delay_us(2*tim);
-				led=0x36;		_delay_us(tim);
-				led=0x41;		_delay_us(tim);
-			}
-			break;
-			case 'H':{
-				led=0x00;		_delay_us(tim);
-				led=0x77;		_delay_us(3*tim);
-				led=0x00;		_delay_us(tim);
-			}
-			break;
-			case 'I':{
-				led=0x3E;		_delay_us(tim);
-				led=0x1C;		_delay_us(tim);
-				led=0x00;		_delay_us(tim);
-				led=0x1C;		_delay_us(tim);
-				led=0x3E;		_delay_us(tim);
-			}
-			break;
-			case 'J':{
-				led=0x3F;		_delay_us(tim);
-				led=0x01;		_delay_us(tim);
-				led=0x3E;		_delay_us(2*tim);	
-				led=0x7D;		_delay_us(tim);
-			}
-			break;
-			case 'K':{
-				led=0x3E;		_delay_us(tim);
-				led=0x5D;		_delay_us(tim);
-				led=0x6B;		_delay_us(tim);
-				led=0x77;		_delay_us(tim);	
-				led=0x00;		_delay_us(tim);
-				
-			}
-			break;
-			case 'L':{				
-				led=0x7E;		_delay_us(4*tim);
-				led=0x00;		_delay_us(tim);		
-			}
-			break;
-			case 'M':{
-				led=0x00;		_delay_us(tim);
-				led=0x1F;		_delay_us(tim);
-				led=0x40;		_delay_us(tim);
-				led=0x1F;		_delay_us(tim);
-				led=0x00;		_delay_us(tim);
-			}
-			break;
-			case 'N':{
-				led=0x00;		_delay_us(tim);
-				led=0x79;		_delay_us(tim);				
-				led=0x73;		_delay_us(tim);
-				led=0x47;		_delay_us(tim);
-				led=0x00;		_delay_us(tim);
-			}
-			break;
-			case 'O':{
-				led=0x41;		_delay_us(tim);
-				led=0x3E;		_delay_us(3*tim);
-				led=0x41;		_delay_us(tim);			
-			}
-			break;			
-			case 'P':{
-				led=0x4F;		_delay_us(tim);
-				led=0x37;		_delay_us(3*tim);
-				led=0x40;		_delay_us(tim);				
-			}
-			break;
-			case 'Q':{
-				led=0x7E;		_delay_us(tim);
-				led=0x41;		_delay_us(tim);
-				led=0x3E;		_delay_us(2*tim);
-				led=0x41;		_delay_us(tim);
-			}
-			break;
-			case 'R':{
-				led=0x4E;		_delay_us(tim);
-				led=0x35;		_delay_us(tim);
-				led=0x33;		_delay_us(tim);
-				led=0x37;		_delay_us(tim);
-				led=0x40;		_delay_us(tim);				
-			}
-			break;
-			case 'S':{				
-				led=0x59;		_delay_us(tim);
-				led=0x36;		_delay_us(3*tim);
-				led=0x4D;		_delay_us(tim);
-			}
-			break;
-			case 'T':{
-				led=0x3F;		_delay_us(2*tim);
-				led=0x00;		_delay_us(tim);
-				led=0x3F;		_delay_us(2*tim);
-			}
-			break;
-			case 'U':{
-				led=0x01;		_delay_us(tim);
-				led=0x7E;		_delay_us(3*tim);
-				led=0x01;		_delay_us(tim);
-			}
-			break;
-			case 'V':{
-				led=0x03;		_delay_us(tim);
-				led=0x7D;		_delay_us(tim);
-				led=0x7E;		_delay_us(tim);
-				led=0x7D;		_delay_us(tim);
-				led=0x03;		_delay_us(tim);
-			}
-			break;
-			case 'W':{
-				led=0x01;		_delay_us(tim);
-				led=0x7E;		_delay_us(tim);
-				led=0x01;		_delay_us(tim);
-				led=0x7E;		_delay_us(tim);
-				led=0x01;		_delay_us(tim);
-			}
-			break;
-			case 'X':{
-				led=0x1C;		_delay_us(tim);
-				led=0x6B;		_delay_us(tim);
-				led=0x77;		_delay_us(tim);
-				led=0x6B;		_delay_us(tim);
-				led=0x1C;		_delay_us(tim);
-			}
-			break;
-			case 'Y':{
-				led=0x1F;		_delay_us(tim);
-				led=0x6F;		_delay_us(tim);
-				led=0x70;		_delay_us(tim);
-				led=0x6F;		_delay_us(tim);
-				led=0x1F;		_delay_us(tim);
-			}
-			break;
-			case 'Z':{
-				led=0x1C;		_delay_us(tim);	
-				led=0x2E;		_delay_us(tim);		
-				led=0x36;		_delay_us(tim);	
-				led=0x3A;		_delay_us(tim);
-				led=0x1C;		_delay_us(tim);
-			}
-			case ' ':{
-				led=0xFF;		_delay_us(tim);
-			}
-			break;			
-			}		//Fin del switch case	
-		led=0xFF;		_delay_us(tim);
-		}		//Fin del for
-		led=0xFF;		_delay_us(25*tim);
+			for (int u=0;u<6;u++){
+				led=bibl[o][u];
+				_delay_us(tim);
+				cont++;
+				if ((o==26) &&(u==1)){
+					u=6;
+				}
+			}//For de letra
+		}//Fin del for de palabras
+		esp=142-cont;
+		for (int k=esp; k>0; k--){
+			led=0xFF;		_delay_us(tim);
+		}//For de espacios
 	}//Fin del While
 }//Fin del Main
 
+//56, 46 U
 
-
+//142, 132U
