@@ -3,7 +3,7 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #define led PORTB
-#define baud_rate 9600 //bps -- ingresar valor de baud rate  // velocidad de comunicacion // generador de tasa de transferencia preestablecida por el numero del modulo.
+#define baud_rate 9600 //bps -- ingresar valor de baud rate  // velocidad de comunicacion 
 #define ubrr_valor (((F_CPU / (baud_rate * 16UL))) - 1) // 51
 #define vel_motor 1090 //velocidad del motor en rpm
 #define T_motor ((60000)/vel_motor) //período en ms
@@ -114,19 +114,15 @@ int main(void){
 			 //Si se excedió los caracteres, hay al menos 29 caract., 28 en el primer tiempo
 			 //por tanto c de 1 a 58 son 3 seg (de acuerdo a la velocidad del motor actual)mostrando los primeros 28 caracteres y 
 			 //de 59 a 116 otros 3 seg mostrando los caract. restantes
-			switch(c){//Si no se excedió, se mostrará lo mismo en ambos tiempos
-				case 1: lim=(an-eq); //Si an>28, lim va a ser =28 siempre, con inf=-1 se va a presentar los primeros 28 caracteres
-				inf=-1; //Si an<28, eq=0, entonces lim va a ser an, es decir la cantidad de caracteres ingresados
-				break;//y con inf=-1 se van a presentar los caract. ingresados de forma normal
-				case 59: lim=an; //Si an>28, entonces eq>0, por lo que lim va a ser el máximo de caracteres ingresados (an) e inf=28, lo cual
+			if (c<59){//Si no se excedió, se mostrará lo mismo en ambos tiempos
+				lim=(an-eq);//Con c<59: Si an>28, lim va a ser =28 siempre, con inf=-1 se va a presentar los primeros 28 caracteres
+				inf=-1;//Si an<28, eq=0, entonces lim va a ser an, es decir la cantidad de caracteres ingresados
+				} else if (c<116){//y con inf=-1 se van a presentar los caract. ingresados de forma normal
+				lim=an;//Con c<116: Si an>28, entonces eq>0, por lo que lim va a ser el máximo de caracteres ingresados (an) e inf=28, lo cual
 				if (eq>0){//hace que se presente los caracteres excedidos del primer tiempo
 					inf=28;//Si an<28, eq=0, entonces inf=-1 y lim=an, se presentan todos los caracteres ingresados de forma normal
-				} else {inf=-1;}
-				break;
-				case 116:
-				c=0;//c vuelve a 1 cuando se llegue a 117,
-				break;
-			}
+					} else {inf=-1;}//c vuelve a 1 cuando se llegue a 117,
+					} else {c=1;}
 			//fin algoritmo para cuando se excede el límite de caracteres y se presenta en dos tiempos
 			
 		//For para presentar todas las letras/caracteres introducidos, desde lim hasta inf	
