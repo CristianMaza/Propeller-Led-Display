@@ -5,9 +5,9 @@
 #define led PORTB
 #define baud_rate 9600 //bps -- ingresar valor de baud rate  // velocidad de comunicacion // generador de tasa de transferencia preestablecida por el numero del modulo.
 #define ubrr_valor (((F_CPU / (baud_rate * 16UL))) - 1) // 51
-#define vel_motor 1123 //velocidad del motor en rpm
+#define vel_motor 1090 //velocidad del motor en rpm
 #define T_motor ((60000)/vel_motor) //período en ms
-#define col 170//columnas en base al perímetro que recorre el prototipo
+#define col 174//columnas en base al perímetro que recorre el prototipo
 
 char car;
 char palabra[100];
